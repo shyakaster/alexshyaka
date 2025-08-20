@@ -39,7 +39,7 @@ export class MemStorage implements IStorage {
         slug: "building-market-ready-tech-skills-african-graduates",
         content: `# Building Market-Ready Tech Skills for African Graduates
 
-CodeImpact specializes in delivering industry-relevant technical skills to African graduates aged 18-35, addressing the critical skills gap that exists between traditional education and market demands.
+[CodeImpact](https://codeimpact.co) specializes in delivering industry-relevant technical skills to African graduates aged 18-35, addressing the critical skills gap that exists between traditional education and market demands.
 
 ## Our Strategic Approach
 
@@ -57,7 +57,7 @@ Over the past two years, we have successfully managed bootcamps and developed co
 
 Consider Uganda's educational landscape: approximately **400,000 students graduate** from high schools and universities annually. The fundamental challenge lies in the disconnect between academic preparation and workplace requirements—graduates often lack the practical, job-ready skills that employers demand.
 
-CodeImpact bridges this critical gap by connecting aspiring developers with experienced software practitioners who possess real-world expertise. Our mentorship network includes **50+ seasoned software engineers** specializing in diverse domains including Web Development, Mobile Development, Data Science, and DevOps.
+[CodeImpact](https://codeimpact.co) bridges this critical gap by connecting aspiring developers with experienced software practitioners who possess real-world expertise. Our mentorship network includes **50+ seasoned software engineers** specializing in diverse domains including Web Development, Mobile Development, Data Science, and DevOps.
 
 ## Measurable Outcomes and Strategic Partnerships
 
@@ -71,8 +71,8 @@ Our vision extends beyond individual success stories. Through our developer comm
 
 This community serves as more than a professional network—it's an ecosystem where members collaborate on projects, co-found technology companies, and create opportunities for one another, fostering sustainable growth within Africa's technology landscape.
 
-*At CodeImpact, we recognize that while talent is evenly distributed across Africa, opportunity is not. We are committed to changing this narrative.*`,
-        excerpt: "CodeImpact's strategic approach to delivering industry-relevant technical skills to African graduates, bridging the critical gap between traditional education and global market demands.",
+*At [CodeImpact](https://codeimpact.co), we recognize that while talent is evenly distributed across Africa, opportunity is not. We are committed to changing this narrative.*`,
+        excerpt: "[CodeImpact](https://codeimpact.co)'s strategic approach to delivering industry-relevant technical skills to African graduates, bridging the critical gap between traditional education and global market demands.",
         featuredImage: "/src/assets/Image_fx (2)_1755686598397.jpg",
         tags: ["African Youth Empowerment", "Global Competitiveness", "Skills Gap", "Economic Empowerment"],
         published: true,
@@ -92,7 +92,7 @@ This community serves as more than a professional network—it's an ecosystem wh
 
 *Alex Nkusi Shyaka | September 11, 2021*
 
-The educational journey at CodeImpact represents the cornerstone of our youth development program. We continuously refine our methodology to ensure seamless knowledge transfer and optimal learning outcomes for young African minds entering the technology space.
+The educational journey at [CodeImpact](https://codeimpact.co) represents the cornerstone of our youth development program. We continuously refine our methodology to ensure seamless knowledge transfer and optimal learning outcomes for young African minds entering the technology space.
 
 ## Foundation Phase: Cognitive Development Through Computing
 
@@ -126,8 +126,8 @@ This community facilitates peer-to-peer learning, startup incubation, profession
 
 Our mission transcends individual skill development—we cultivate tomorrow's technology leaders. Success requires collective commitment from entrepreneurs, educators, parents, and stakeholders who share our vision of transforming Africa from a technology consumer market to a global innovation hub.
 
-CodeImpact has embarked on this transformational journey, and through unified effort, we will democratize opportunity across the continent. Our foundational belief remains unwavering: **talent is evenly distributed, but opportunity is not**—we exist to change this reality.`,
-        excerpt: "Explore CodeImpact's innovative educational methodology—from foundational computational thinking to advanced web development—designed to cultivate Africa's next generation of technology leaders.",
+[CodeImpact](https://codeimpact.co) has embarked on this transformational journey, and through unified effort, we will democratize opportunity across the continent. Our foundational belief remains unwavering: **talent is evenly distributed, but opportunity is not**—we exist to change this reality.`,
+        excerpt: "Explore [CodeImpact](https://codeimpact.co)'s innovative educational methodology—from foundational computational thinking to advanced web development—designed to cultivate Africa's next generation of technology leaders.",
         featuredImage: "/src/assets/Image_fx (1)_1755686598397.jpg",
         tags: ["Educational Innovation", "Future Leaders", "Youth Leadership", "Technology Creation"],
         published: true,
@@ -179,7 +179,7 @@ Practice intentional technology use within your household. Consider your own dig
 
 These foundational strategies represent the beginning of comprehensive digital parenting approaches. As Africa's digital landscape continues evolving, families require ongoing education and community support to navigate these challenges effectively.
 
-Our commitment at CodeImpact extends beyond technical education to include digital citizenship and responsible technology use—essential skills for Africa's youth as they engage with global digital communities.
+Our commitment at [CodeImpact](https://codeimpact.co) extends beyond technical education to include digital citizenship and responsible technology use—essential skills for Africa's youth as they engage with global digital communities.
 
 *This discussion continues through our Digital Hustle Africa podcast (@DHApodcast), where we explore technology's impact on African communities and provide practical guidance for families navigating the digital age.*`,
 
@@ -203,7 +203,7 @@ Our commitment at CodeImpact extends beyond technical education to include digit
 
 *Alex Nkusi Shyaka | December 2, 2020*
 
-CodeImpact's mission centers on leveraging technology's transformative potential to create sustainable economic opportunities and community development across Africa. In regions where youth unemployment reaches critical levels, strategic technology adoption represents a fundamental pathway to economic empowerment and global competitiveness.
+[CodeImpact](https://codeimpact.co)'s mission centers on leveraging technology's transformative potential to create sustainable economic opportunities and community development across Africa. In regions where youth unemployment reaches critical levels, strategic technology adoption represents a fundamental pathway to economic empowerment and global competitiveness.
 
 ## Strategic Vision for African Technology Leadership
 
@@ -213,7 +213,7 @@ To establish Africa as a significant player in the global technology ecosystem, 
 
 ## Programming as Essential Literacy
 
-CodeImpact's founding principle centers on elevating Africa's position within the global technology landscape. Among various educational pathways, we deliberately selected **programming as a fundamental literacy skill** for teenagers and young adults.
+[CodeImpact](https://codeimpact.co)'s founding principle centers on elevating Africa's position within the global technology landscape. Among various educational pathways, we deliberately selected **programming as a fundamental literacy skill** for teenagers and young adults.
 
 Steve Jobs' insight remains profoundly relevant: **"Coding teaches you how to think."** Traditional African educational systems often emphasize memorization and regurgitation over critical thinking and problem-solving—a paradigm we actively challenge through our methodology.
 
@@ -238,7 +238,7 @@ Our responsibility extends beyond individual skill development—we cultivate to
 CodeImpact has initiated this transformational journey. Through coordinated effort and shared commitment, we will democratize technological opportunity across the continent, guided by our fundamental conviction: **talent distribution is universal, but opportunity distribution is not**—we exist to correct this imbalance.
 
 *Join us in building Africa's technological future, one community at a time.*`,
-        excerpt: "CodeImpact's strategic vision for building a million-strong African technology community, emphasizing programming literacy and collaborative learning to drive continental innovation.",
+        excerpt: "[CodeImpact](https://codeimpact.co)'s strategic vision for building a million-strong African technology community, emphasizing programming literacy and collaborative learning to drive continental innovation.",
         featuredImage: "/src/assets/Image_fx (7)_1755686598398.jpg",
         tags: ["Continental Development", "African Innovation", "Capacity Building", "Tech Entrepreneurship"],
         published: true,
