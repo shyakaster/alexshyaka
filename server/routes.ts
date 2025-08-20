@@ -11,7 +11,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const mailService = new MailService();
   mailService.setApiKey(process.env.SENDGRID_API_KEY!);
 
-  // Contact form email endpoint
+  // Contact form endpoint - temporary storage solution
   app.post("/api/contact", async (req, res) => {
     try {
       const { name, email, subject, message } = req.body;
@@ -21,61 +21,70 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Name, email, and message are required" });
       }
 
-      const emailSubject = subject ? `${subject} - From ${name}` : `New message from ${name}`;
-      
-      const emailMsg = {
-        to: 'alex.nkusi@codeimpact.co',
-        from: 'alex.nkusi@codeimpact.co', // Use verified SendGrid email
-        replyTo: email, // Reply goes to the form submitter
-        subject: emailSubject,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-            <h2 style="color: #333; border-bottom: 2px solid #007acc; padding-bottom: 10px;">
-              New Contact Form Message
-            </h2>
-            
-            <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
-              <p><strong>From:</strong> ${name}</p>
-              <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Subject:</strong> ${subject || 'No subject'}</p>
-            </div>
-            
-            <div style="background: white; padding: 20px; border-left: 4px solid #007acc; margin: 20px 0;">
-              <h3 style="color: #333; margin-top: 0;">Message:</h3>
-              <p style="line-height: 1.6; color: #555;">${message.replace(/\n/g, '<br>')}</p>
-            </div>
-            
-            <div style="background: #f0f8ff; padding: 15px; border-radius: 5px; margin-top: 20px;">
-              <p style="margin: 0; color: #666; font-size: 14px;">
-                <strong>Reply to:</strong> ${email}<br>
-                <strong>Sent from:</strong> Alex Nkusi Portfolio Website<br>
-                <strong>Time:</strong> ${new Date().toLocaleString()}
-              </p>
-            </div>
-          </div>
-        `,
-        text: `
-New Contact Form Message
-
-From: ${name}
-Email: ${email}
-Subject: ${subject || 'No subject'}
-
-Message:
-${message}
-
-Reply to: ${email}
-Sent from: Alex Nkusi Portfolio Website
-Time: ${new Date().toLocaleString()}
-        `
+      // Store the message temporarily (for now, just log it)
+      const contactMessage = {
+        name,
+        email,
+        subject: subject || 'No subject',
+        message,
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString()
       };
 
-      await mailService.send(emailMsg);
+      // Log the contact message for now (you can retrieve from server logs)
+      console.log("=== NEW CONTACT FORM SUBMISSION ===");
+      console.log(`From: ${name} <${email}>`);
+      console.log(`Subject: ${contactMessage.subject}`);
+      console.log(`Message: ${message}`);
+      console.log(`Time: ${new Date().toLocaleString()}`);
+      console.log("=====================================");
+
+      // Try to send email but don't fail if it doesn't work
+      try {
+        if (process.env.SENDGRID_API_KEY) {
+          const emailMsg = {
+            to: 'alex.nkusi@codeimpact.co',
+            from: 'alex.nkusi@codeimpact.co',
+            replyTo: email,
+            subject: `${contactMessage.subject} - From ${name}`,
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                <h2 style="color: #333; border-bottom: 2px solid #007acc; padding-bottom: 10px;">
+                  New Contact Form Message
+                </h2>
+                
+                <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                  <p><strong>From:</strong> ${name}</p>
+                  <p><strong>Email:</strong> ${email}</p>
+                  <p><strong>Subject:</strong> ${contactMessage.subject}</p>
+                </div>
+                
+                <div style="background: white; padding: 20px; border-left: 4px solid #007acc; margin: 20px 0;">
+                  <h3 style="color: #333; margin-top: 0;">Message:</h3>
+                  <p style="line-height: 1.6; color: #555;">${message.replace(/\n/g, '<br>')}</p>
+                </div>
+                
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 5px; margin-top: 20px;">
+                  <p style="margin: 0; color: #666; font-size: 14px;">
+                    <strong>Reply to:</strong> ${email}<br>
+                    <strong>Sent from:</strong> Alex Nkusi Portfolio Website<br>
+                    <strong>Time:</strong> ${new Date().toLocaleString()}
+                  </p>
+                </div>
+              </div>
+            `
+          };
+          await mailService.send(emailMsg);
+          console.log("Email sent successfully via SendGrid");
+        }
+      } catch (emailError) {
+        console.error("Email sending failed, but form submission logged:", emailError);
+      }
       
-      res.json({ success: true, message: "Email sent successfully" });
+      res.json({ success: true, message: "Message received successfully! I'll get back to you soon." });
     } catch (error) {
-      console.error("Error sending email:", error);
-      res.status(500).json({ error: "Failed to send email" });
+      console.error("Error processing contact form:", error);
+      res.status(500).json({ error: "Failed to submit message" });
     }
   });
 
