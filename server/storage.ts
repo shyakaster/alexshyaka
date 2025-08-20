@@ -47,9 +47,6 @@ We achieve this transformation through intensive, cohort-based training programs
 
 The 2020 Andela Developer Landscape Survey revealed that **70 percent of African software engineers work remotely**—a paradigm shift that eliminates geographical barriers and unlocks unprecedented opportunities for African talent. In regions like Uganda, where youth unemployment reaches 70 percent, remote work capabilities represent a gateway to economic empowerment and global competitiveness.
 
-![African students coding](/assets/Image_fx (2)_1755686598397.jpg)
-*Young African developers in action at one of our CodeImpact training sessions*
-
 ## Our Competitive Advantage
 
 Our leadership team comprises seasoned professionals with extensive experience in software engineering development and mentorship. We bring collective expertise from building engineering teams at prominent organizations including **Andela**, **OutBox**, **Stutern**, **Talent Centric**, and **KanzuCode**.
@@ -101,9 +98,6 @@ The educational journey at CodeImpact represents the cornerstone of our youth de
 
 Our program commences with a **complimentary two-week introduction** designed to cultivate critical thinking and problem-solving capabilities through fundamental computer science concepts. We employ age-appropriate visual programming environments specifically tailored for learners aged 8-12 years, establishing a solid foundation for computational thinking.
 
-![African coding students](/assets/Image_fx (1)_1755686598397.jpg)
-*Young minds discovering the power of code in our foundational program*
-
 ## Core Development Phase: Web Technologies Mastery
 
 Following the introductory phase, learners progress to our **comprehensive eight-week program** focusing on frontend web development fundamentals: **HTML** (HyperText Markup Language) and **CSS** (Cascading Style Sheets).
@@ -117,9 +111,6 @@ CSS transforms static content into engaging user experiences, focusing on aesthe
 The culminating phase centers on **JavaScript**—the universal language of web interactivity. JavaScript proficiency enables our learners to create dynamic, data-driven applications capable of storing, retrieving, updating, and managing information across databases.
 
 This advanced stage emphasizes practical application through collaborative project development, peer presentations, and culminating demonstrations for families and stakeholders during graduation ceremonies. Our holistic approach integrates technical skill development with soft skills training, preparing **well-rounded developers** capable of thriving in diverse, international technology teams.
-
-![Students presenting projects](/assets/Image_fx (4)_1755686598397.jpg)
-*CodeImpact graduates presenting their innovative projects to the community*
 
 ## Pedagogical Innovation: Interactive and Project-Centric Learning
 
@@ -159,9 +150,6 @@ CodeImpact has embarked on this transformational journey, and through unified ef
 The proliferation of digital technology across Africa presents both unprecedented opportunities and significant challenges for our youth. As major technology corporations—commonly referred to as **FAANG** (Facebook, Apple, Amazon, Netflix, and Google)—increasingly capture and monetize user attention, we must examine the implications for African families and our children's developmental journey.
 
 This analysis becomes particularly critical as Africa experiences rapid digital adoption, with young people often serving as early adopters of new technologies without adequate guidance or digital literacy frameworks.
-
-![African students learning responsibly](/assets/Image_fx (5)_1755686598397.jpg)
-*Promoting responsible technology use in African educational environments*
 
 ## Strategic Approaches for African Parents
 
@@ -217,7 +205,39 @@ Our commitment at CodeImpact extends beyond technical education to include digit
 
 CodeImpact's mission centers on leveraging technology's transformative potential to create sustainable economic opportunities and community development across Africa. In regions where youth unemployment reaches critical levels, strategic technology adoption represents a fundamental pathway to economic empowerment and global competitiveness.
 
-![CodeImpact classroom environment](/assets/Image_fx (7)_1755686598398.jpg)\n*Building Africa's next generation of technology leaders through community-centered education*\n\n## Strategic Vision for African Technology Leadership\n\nOur approach prioritizes early technology introduction, positioning African youth to compete effectively in global markets. We recognize that contemporary technology has fundamentally transformed employment paradigms—**professional opportunities now depend on skill availability rather than geographical proximity**.\n\nTo establish Africa as a significant player in the global technology ecosystem, we must cultivate substantial communities of technology leaders and practitioners who can mentor subsequent generations and drive continental innovation.\n\n## Programming as Essential Literacy\n\nCodeImpact's founding principle centers on elevating Africa's position within the global technology landscape. Among various educational pathways, we deliberately selected **programming as a fundamental literacy skill** for teenagers and young adults.\n\nSteve Jobs' insight remains profoundly relevant: **\"Coding teaches you how to think.\"** Traditional African educational systems often emphasize memorization and regurgitation over critical thinking and problem-solving—a paradigm we actively challenge through our methodology.\n\n## Pedagogical Philosophy: Embracing Failure as Growth\n\nOur learning environment encourages **experimentation and creative problem-solving**, fostering spaces where learners can experience failure as a natural component of mastery. We reject punitive approaches to mistakes, instead celebrating them as essential learning opportunities.\n\nOur weekend programming initiatives serve teenagers and confident pre-teens who demonstrate enthusiasm for technological learning and personal development.\n\nThe **12-week intensive program** emphasizes collaborative learning and project-based development, with dedicated facilitator support available throughout the week for individualized guidance and challenge resolution.\n\n![Community learning environment](/assets/Image_fx (9)_1755686598398.jpg)\n*Collaborative learning environments fostering innovation and peer support*\n\n## Scaling Impact: The Million-Person Vision\n\nOur ultimate objective involves cultivating a **one-million-strong community of African technology practitioners and leaders** who will engage in continuous mutual learning, collaborative project development, entrepreneurial ventures, and professional networking.\n\nProgram graduates automatically qualify for community membership, supported by robust infrastructure designed to maintain engagement, relevance, and global connectivity within the technology sector.\n\n## Continental Transformation Through Collective Action\n\nOur responsibility extends beyond individual skill development—we cultivate tomorrow's technology leadership. Success requires unified commitment from entrepreneurs, educators, parents, and community stakeholders who share our vision of transforming Africa from a technology consumption market to a global innovation hub.\n\nCodeImpact has initiated this transformational journey. Through coordinated effort and shared commitment, we will democratize technological opportunity across the continent, guided by our fundamental conviction: **talent distribution is universal, but opportunity distribution is not**—we exist to correct this imbalance.\n\n*Join us in building Africa's technological future, one community at a time.*`,
+## Strategic Vision for African Technology Leadership
+
+Our approach prioritizes early technology introduction, positioning African youth to compete effectively in global markets. We recognize that contemporary technology has fundamentally transformed employment paradigms—**professional opportunities now depend on skill availability rather than geographical proximity**.
+
+To establish Africa as a significant player in the global technology ecosystem, we must cultivate substantial communities of technology leaders and practitioners who can mentor subsequent generations and drive continental innovation.
+
+## Programming as Essential Literacy
+
+CodeImpact's founding principle centers on elevating Africa's position within the global technology landscape. Among various educational pathways, we deliberately selected **programming as a fundamental literacy skill** for teenagers and young adults.
+
+Steve Jobs' insight remains profoundly relevant: **"Coding teaches you how to think."** Traditional African educational systems often emphasize memorization and regurgitation over critical thinking and problem-solving—a paradigm we actively challenge through our methodology.
+
+## Pedagogical Philosophy: Embracing Failure as Growth
+
+Our learning environment encourages **experimentation and creative problem-solving**, fostering spaces where learners can experience failure as a natural component of mastery. We reject punitive approaches to mistakes, instead celebrating them as essential learning opportunities.
+
+Our weekend programming initiatives serve teenagers and confident pre-teens who demonstrate enthusiasm for technological learning and personal development.
+
+The **12-week intensive program** emphasizes collaborative learning and project-based development, with dedicated facilitator support available throughout the week for individualized guidance and challenge resolution.
+
+## Scaling Impact: The Million-Person Vision
+
+Our ultimate objective involves cultivating a **one-million-strong community of African technology practitioners and leaders** who will engage in continuous mutual learning, collaborative project development, entrepreneurial ventures, and professional networking.
+
+Program graduates automatically qualify for community membership, supported by robust infrastructure designed to maintain engagement, relevance, and global connectivity within the technology sector.
+
+## Continental Transformation Through Collective Action
+
+Our responsibility extends beyond individual skill development—we cultivate tomorrow's technology leadership. Success requires unified commitment from entrepreneurs, educators, parents, and community stakeholders who share our vision of transforming Africa from a technology consumption market to a global innovation hub.
+
+CodeImpact has initiated this transformational journey. Through coordinated effort and shared commitment, we will democratize technological opportunity across the continent, guided by our fundamental conviction: **talent distribution is universal, but opportunity distribution is not**—we exist to correct this imbalance.
+
+*Join us in building Africa's technological future, one community at a time.*`,
         excerpt: "CodeImpact's strategic vision for building a million-strong African technology community, emphasizing programming literacy and collaborative learning to drive continental innovation.",
         featuredImage: "/src/assets/Image_fx (7)_1755686598398.jpg",
         tags: ["Community Building", "African Tech", "Vision", "Technology Education"],
