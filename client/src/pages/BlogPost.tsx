@@ -161,7 +161,7 @@ export default function BlogPostPage() {
                 <Avatar className="w-10 h-10">
                   <img 
                     src={alexAuthorImage} 
-                    alt="Alex Nkusi Shyaka"
+                    alt="Alex Nkusi Shyaka - EdTech professional and CodeImpact founder, thoughtful pose with glasses in professional headshot"
                     className="w-full h-full object-cover rounded-full"
                   />
                   <AvatarFallback className="bg-accent/10 text-accent font-semibold">
@@ -210,7 +210,7 @@ export default function BlogPostPage() {
           <div className="mb-12">
             <img 
               src={getResolvedImagePath(post.featuredImage)}
-              alt={post.title}
+              alt={`${post.title} - Featured image showing African students engaged in technology learning and educational innovation activities`}
               className="w-full h-96 object-cover rounded-xl shadow-lg"
               data-testid="post-featured-image"
             />

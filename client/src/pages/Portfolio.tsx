@@ -235,7 +235,7 @@ export default function Portfolio() {
             <div className="relative w-full max-w-md mx-auto">
               <img 
                 src={alexProfileImage} 
-                alt="Alex Shyaka - Professional headshot" 
+                alt="Alex Nkusi Shyaka - EdTech professional and CodeImpact founder specializing in African youth empowerment through technology education" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
                 data-testid="hero-image"
               />
@@ -331,7 +331,7 @@ export default function Portfolio() {
                   <div className="relative overflow-hidden">
                     <img 
                       src={partner.image}
-                      alt={partner.title}
+                      alt={`${partner.title} - Strategic partnership organization focused on African tech talent development and youth empowerment`}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                       data-testid={`partner-image-${index}`}
                     />
@@ -438,7 +438,7 @@ export default function Portfolio() {
                   <div className="relative overflow-hidden rounded-t-xl">
                     <img 
                       src={getResolvedImagePath(post.featuredImage || "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300")}
-                      alt={post.title}
+                      alt={`${post.title} - Educational technology blog post by Alex Nkusi Shyaka covering African youth development and tech skills`}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       data-testid={`preview-post-image-${post.id}`}
                     />

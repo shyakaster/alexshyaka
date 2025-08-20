@@ -81,7 +81,7 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
         <div className="relative overflow-hidden rounded-t-xl">
           <img 
             src={getResolvedImagePath(post.featuredImage || "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300")} 
-            alt={post.title}
+            alt={`${post.title} - Educational technology blog post featuring African youth engaged in hands-on learning and technology skills development`}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             data-testid={`blog-image-${post.id}`}
           />
@@ -132,7 +132,7 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
             <Avatar className="w-8 h-8">
               <img 
                 src={alexAuthorImage} 
-                alt="Alex Nkusi Shyaka"
+                alt="Alex Nkusi Shyaka - EdTech professional and CodeImpact founder, thoughtful pose with glasses in professional headshot"
                 className="w-full h-full object-cover rounded-full"
               />
               <AvatarFallback className="bg-accent/10 text-accent text-sm">
