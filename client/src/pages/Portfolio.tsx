@@ -83,7 +83,7 @@ export default function Portfolio() {
       title: "Andela",
       description: "Global Remote Talent Platform",
       details: "Collaborating with Andela to develop world-class African software engineers through comprehensive training programs and global placement opportunities.",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/attached_assets/Image_fx%20(10)_1755691569248.jpg",
       tags: ["Global Talent", "Software Engineering", "Remote Work"],
       website: "https://www.andela.com/",
       color: "from-green-500 to-blue-500"
@@ -92,7 +92,7 @@ export default function Portfolio() {
       title: "Tunga",
       description: "Tech Talent Marketplace",
       details: "Partnering with Tunga to connect skilled African developers with international tech companies and innovative project opportunities.",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/attached_assets/Image_fx%20(11)_1755691569249.jpg",
       tags: ["Tech Marketplace", "Developer Network", "International Projects"],
       website: "https://tunga.io/",
       color: "from-purple-500 to-pink-500"
@@ -101,7 +101,7 @@ export default function Portfolio() {
       title: "KanzuCode",
       description: "Coding Bootcamp Excellence",
       details: "Strategic alliance with KanzuCode to deliver intensive coding bootcamps that transform beginners into professional software developers.",
-      image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/attached_assets/Image_fx%20(12)_1755691569249.jpg",
       tags: ["Bootcamp Training", "Full-Stack Development", "Career Transformation"],
       website: "https://kanzucode.com/",
       color: "from-orange-500 to-red-500"
@@ -110,7 +110,7 @@ export default function Portfolio() {
       title: "Outbox Uganda",
       description: "Innovation Hub & Incubator",
       details: "Collaborating with Outbox to nurture tech innovation and entrepreneurship across Uganda's vibrant startup ecosystem.",
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/attached_assets/Image_fx%20(13)_1755691569249.jpg",
       tags: ["Innovation Hub", "Startup Incubation", "Tech Entrepreneurship"],
       website: "https://outboxuganda.org/",
       color: "from-teal-500 to-green-500"
@@ -119,7 +119,7 @@ export default function Portfolio() {
       title: "Stutern",
       description: "Career Acceleration Platform",
       details: "Partnering with Stutern to accelerate tech career growth through structured learning paths and industry-aligned skill development.",
-      image: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/attached_assets/Image_fx_1755691569250.jpg",
       tags: ["Career Growth", "Skill Development", "Professional Training"],
       website: "https://stutern.com/",
       color: "from-blue-500 to-indigo-500"
@@ -128,7 +128,7 @@ export default function Portfolio() {
       title: "CodeImpact",
       description: "Youth Empowerment Initiative",
       details: "Leading CodeImpact's mission to empower young Africans with market-ready tech skills through practical education, mentorship, and sustainable community building across the continent.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/attached_assets/Image_fx%20(14)_1755691569250.jpg",
       tags: ["Youth Empowerment", "Tech Education", "Community Building"],
       website: "https://codeimpact.co/",
       color: "from-emerald-500 to-cyan-500"
