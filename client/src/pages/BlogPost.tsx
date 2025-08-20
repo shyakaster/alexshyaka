@@ -1,6 +1,6 @@
 import { useParams, Link } from "wouter";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -25,6 +25,11 @@ export default function BlogPostPage() {
     email: "",
     content: ""
   });
+
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   const { data: post, isLoading: postLoading } = useQuery<BlogPost>({
     queryKey: ["/api/blog-posts", slug],
