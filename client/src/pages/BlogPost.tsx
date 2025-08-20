@@ -245,6 +245,22 @@ export default function BlogPostPage() {
                   <span>{props.children}</span>
                 </li>
               ),
+              a: (props: any) => {
+                const { href, children, ...rest } = props;
+                // Check if it's an external link
+                const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+                return (
+                  <a
+                    href={href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="text-accent hover:underline font-medium"
+                    {...rest}
+                  >
+                    {children}
+                  </a>
+                );
+              },
             }}
           >
             {post.content}
