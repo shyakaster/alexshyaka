@@ -5,8 +5,33 @@ import { insertBlogPostSchema, insertCommentSchema } from "@shared/schema";
 import { ObjectStorageService } from "./objectStorage";
 import { z } from "zod";
 import { MailService } from '@sendgrid/mail';
+import path from "path";
+import fs from "fs";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve sitemap.xml with correct content-type
+  app.get("/sitemap.xml", (req, res) => {
+    const sitemapPath = path.join(process.cwd(), "client/public/sitemap.xml");
+    
+    if (fs.existsSync(sitemapPath)) {
+      res.set('Content-Type', 'application/xml');
+      res.sendFile(sitemapPath);
+    } else {
+      res.status(404).send("Sitemap not found");
+    }
+  });
+
+  // Serve robots.txt with correct content-type
+  app.get("/robots.txt", (req, res) => {
+    const robotsPath = path.join(process.cwd(), "client/public/robots.txt");
+    
+    if (fs.existsSync(robotsPath)) {
+      res.set('Content-Type', 'text/plain');
+      res.sendFile(robotsPath);
+    } else {
+      res.status(404).send("Robots.txt not found");
+    }
+  });
   // Initialize SendGrid
   const mailService = new MailService();
   mailService.setApiKey(process.env.SENDGRID_API_KEY!);
