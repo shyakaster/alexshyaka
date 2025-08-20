@@ -14,7 +14,7 @@ import SocialShare from "@/components/SocialShare";
 import { BlogPost, Comment, insertCommentSchema } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { getResolvedImagePath } from "@/pages/Portfolio";
+import { getResolvedImagePath, alexAuthorImage } from "@/pages/Portfolio";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -159,6 +159,11 @@ export default function BlogPostPage() {
             <div className="flex flex-wrap items-center gap-6 text-sm text-secondary">
               <div className="flex items-center space-x-3">
                 <Avatar className="w-10 h-10">
+                  <img 
+                    src={alexAuthorImage} 
+                    alt="Alex Nkusi Shyaka"
+                    className="w-full h-full object-cover rounded-full"
+                  />
                   <AvatarFallback className="bg-accent/10 text-accent font-semibold">
                     AS
                   </AvatarFallback>
@@ -167,7 +172,7 @@ export default function BlogPostPage() {
                   <div className="font-medium text-primary" data-testid="post-author">
                     {post.metadata?.author || "Alex Shyaka"}
                   </div>
-                  <div className="text-sm text-secondary">Full-Stack Developer</div>
+                  <div className="text-sm text-secondary">EdTech Professional</div>
                 </div>
               </div>
               
