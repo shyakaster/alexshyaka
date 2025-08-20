@@ -19,6 +19,45 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
     });
   };
 
+  // Function to convert markdown links to clickable HTML links
+  const renderTextWithLinks = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        parts.push(text.slice(lastIndex, match.index));
+      }
+      
+      // Add the link
+      const [, linkText, linkUrl] = match;
+      const isExternal = linkUrl.startsWith('http://') || linkUrl.startsWith('https://');
+      parts.push(
+        <a
+          key={match.index}
+          href={linkUrl}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-accent hover:underline font-medium"
+        >
+          {linkText}
+        </a>
+      );
+      
+      lastIndex = match.index + match[0].length;
+    }
+    
+    // Add remaining text
+    if (lastIndex < text.length) {
+      parts.push(text.slice(lastIndex));
+    }
+    
+    return parts.length > 1 ? parts : text;
+  };
+
   const getCategoryColor = (tag: string) => {
     const colors: Record<string, string> = {
       "JavaScript": "bg-yellow-500",
@@ -84,7 +123,7 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
         </Link>
         
         <p className="text-secondary line-clamp-3" data-testid={`blog-excerpt-${post.id}`}>
-          {post.excerpt || post.content.substring(0, 150) + "..."}
+          {renderTextWithLinks(post.excerpt || post.content.substring(0, 150) + "...")}
         </p>
         
         <div className="flex items-center justify-between pt-4">

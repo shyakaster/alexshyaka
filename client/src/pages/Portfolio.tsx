@@ -14,6 +14,45 @@ export default function Portfolio() {
     },
   });
 
+  // Function to convert markdown links to clickable HTML links
+  const renderTextWithLinks = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        parts.push(text.slice(lastIndex, match.index));
+      }
+      
+      // Add the link
+      const [, linkText, linkUrl] = match;
+      const isExternal = linkUrl.startsWith('http://') || linkUrl.startsWith('https://');
+      parts.push(
+        <a
+          key={match.index}
+          href={linkUrl}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-accent hover:underline font-medium"
+        >
+          {linkText}
+        </a>
+      );
+      
+      lastIndex = match.index + match[0].length;
+    }
+    
+    // Add remaining text
+    if (lastIndex < text.length) {
+      parts.push(text.slice(lastIndex));
+    }
+    
+    return parts.length > 1 ? parts : text;
+  };
+
   const skills = [
     {
       title: "Financial Analysis & Modeling",
@@ -340,7 +379,7 @@ export default function Portfolio() {
                     </h3>
                   </Link>
                   <p className="text-secondary" data-testid={`preview-post-excerpt-${post.id}`}>
-                    {post.excerpt || post.content.substring(0, 100) + "..."}
+                    {renderTextWithLinks(post.excerpt || post.content.substring(0, 100) + "...")}
                   </p>
                   <Link href={`/blog/${post.slug}`}>
                     <span className="text-accent hover:text-blue-600 font-medium inline-block" data-testid={`preview-post-link-${post.id}`}>
