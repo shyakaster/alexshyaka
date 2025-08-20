@@ -11,7 +11,6 @@ export default function Navigation() {
   const navItems = [
     { name: "Portfolio", path: "/" },
     { name: "Blog", path: "/blog" },
-    { name: "Write", path: "/write" },
   ];
 
   const isActive = (path: string) => {
