@@ -13,6 +13,10 @@ import outboxImg from "@assets/Image_fx (13)_1755692572028.jpg";
 import stuternImg from "@assets/Image_fx_1755692572029.jpg";
 import codeimpactImg from "@assets/Image_fx (17)_1755692843178.jpg";
 
+// Import new blog thumbnails
+import blogThumb1 from "@assets/Image_fx (15)_1755693909853.jpg";
+import blogThumb2 from "@assets/Image_fx (16)_1755693909857.jpg";
+
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],

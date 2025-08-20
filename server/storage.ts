@@ -73,7 +73,7 @@ This community serves as more than a professional network—it's an ecosystem wh
 
 *At [CodeImpact](https://codeimpact.co), we recognize that while talent is evenly distributed across Africa, opportunity is not. We are committed to changing this narrative.*`,
         excerpt: "[CodeImpact](https://codeimpact.co)'s strategic approach to delivering industry-relevant technical skills to African graduates, bridging the critical gap between traditional education and global market demands.",
-        featuredImage: "/src/assets/Image_fx (2)_1755686598397.jpg",
+        featuredImage: "/src/assets/Image_fx (15)_1755693909853.jpg",
         tags: ["African Youth Empowerment", "Global Competitiveness", "Skills Gap", "Economic Empowerment"],
         published: true,
         createdAt: new Date("2024-01-15"),
@@ -128,7 +128,7 @@ Our mission transcends individual skill development—we cultivate tomorrow's te
 
 [CodeImpact](https://codeimpact.co) has embarked on this transformational journey, and through unified effort, we will democratize opportunity across the continent. Our foundational belief remains unwavering: **talent is evenly distributed, but opportunity is not**—we exist to change this reality.`,
         excerpt: "Explore [CodeImpact](https://codeimpact.co)'s innovative educational methodology—from foundational computational thinking to advanced web development—designed to cultivate Africa's next generation of technology leaders.",
-        featuredImage: "/src/assets/Image_fx (1)_1755686598397.jpg",
+        featuredImage: "/src/assets/Image_fx (16)_1755693909857.jpg",
         tags: ["Educational Innovation", "Future Leaders", "Youth Leadership", "Technology Creation"],
         published: true,
         createdAt: new Date("2021-09-11"),
