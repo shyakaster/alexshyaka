@@ -83,7 +83,7 @@ export default function Portfolio() {
       title: "Andela",
       description: "Global Remote Talent Platform",
       details: "Collaborating with Andela to develop world-class African software engineers through comprehensive training programs and global placement opportunities.",
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Global Talent", "Software Engineering", "Remote Work"],
       website: "https://www.andela.com/",
       color: "from-green-500 to-blue-500"
@@ -101,7 +101,7 @@ export default function Portfolio() {
       title: "KanzuCode",
       description: "Coding Bootcamp Excellence",
       details: "Strategic alliance with KanzuCode to deliver intensive coding bootcamps that transform beginners into professional software developers.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Bootcamp Training", "Full-Stack Development", "Career Transformation"],
       website: "https://kanzucode.com/",
       color: "from-orange-500 to-red-500"
