@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import { BlogPost } from "@shared/schema";
 import alexProfileImage from "@assets/alex-new_1755685299395.jpeg";
+import cvFile from "@assets/CV_1755685547399.pdf";
 
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
@@ -16,42 +17,50 @@ export default function Portfolio() {
 
   const skills = [
     {
-      title: "Frontend Development",
-      description: "Creating responsive, interactive user interfaces with modern frameworks and best practices.",
-      icon: "fas fa-code",
+      title: "Financial Analysis & Modeling",
+      description: "Expert in statistical analysis, data modeling, risk assessment, and A/B testing for investment strategies and decision-making.",
+      icon: "fas fa-chart-line",
       color: "bg-accent/10 text-accent",
-      tags: ["React", "TypeScript", "Next.js", "Tailwind"]
+      tags: ["Financial Modeling", "Risk Assessment", "Statistical Analysis", "A/B Testing"]
     },
     {
-      title: "Backend Development", 
-      description: "Building scalable APIs and robust server-side applications with cloud infrastructure.",
-      icon: "fas fa-server",
+      title: "Technical Proficiency", 
+      description: "Advanced SQL, Python programming, and data visualization tools to extract actionable insights from complex datasets.",
+      icon: "fas fa-database",
       color: "bg-green-100 text-green-600",
-      tags: ["Node.js", "Python", "PostgreSQL", "AWS"]
+      tags: ["SQL", "Python", "Power BI", "Tableau", "Excel"]
     },
     {
-      title: "Technical Writing",
-      description: "Crafting clear, engaging technical content that makes complex concepts accessible.",
-      icon: "fas fa-pen-nib", 
+      title: "Mentoring & Community Building",
+      description: "Founder of CodeImpact, mentoring aspiring developers and building sustainable tech communities across Africa.",
+      icon: "fas fa-users", 
       color: "bg-purple-100 text-purple-600",
-      tags: ["Documentation", "Tutorials", "Blogging", "SEO"]
+      tags: ["Developer Mentoring", "Community Building", "Youth Development", "Education"]
     }
   ];
 
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Built with React, Node.js, and PostgreSQL.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["React", "Node.js", "Stripe API"],
+      title: "Investment Opportunity Analysis",
+      description: "Built predictive models using Python to evaluate potential returns and enhance investment decision-making. Designed Power BI dashboards visualizing risk factors and growth opportunities for stakeholders.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["Python", "Power BI", "Financial Modeling"],
       liveUrl: "#",
       codeUrl: "#"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team workspaces, and productivity analytics. Features drag-and-drop functionality and mobile responsiveness.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Vue.js", "Socket.io", "MongoDB"],
+      title: "Portfolio Risk Assessment",
+      description: "Conducted comprehensive data analysis on portfolio performance using SQL, identifying high-risk investments and suggesting mitigation strategies. Created Tableau dashboards to support data-driven financial planning.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["SQL", "Tableau", "Risk Analysis"],
+      liveUrl: "#",
+      codeUrl: "#"
+    },
+    {
+      title: "CodeImpact Developer Community",
+      description: "Founded and built a thriving developer mentorship organization with 45+ registered members. Organizes 12-week coding classes for teens and helps developers transition to successful freelance careers.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["Community Building", "Mentoring", "Education"],
       liveUrl: "#",
       codeUrl: "#"
     }
@@ -65,10 +74,10 @@ export default function Portfolio() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight" data-testid="hero-title">
-                Full-Stack Developer & Technical Writer
+                Graduate Investment Analyst & Data Expert
               </h1>
               <p className="text-xl text-secondary leading-relaxed max-w-lg" data-testid="hero-description">
-                Building scalable web applications and sharing knowledge through thoughtful technical content. Currently crafting digital experiences at the intersection of design and code.
+                Experienced data analyst with 3+ years in financial modeling, SQL, and Python. Passionate about extracting actionable insights from complex datasets to drive strategic decision-making and mentoring the next generation of developers.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -76,6 +85,12 @@ export default function Portfolio() {
                 size="lg"
                 className="bg-accent text-white hover:bg-blue-600"
                 data-testid="button-view-work"
+                onClick={() => {
+                  const projectsSection = document.getElementById('projects-section');
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 View My Work
               </Button>
@@ -83,6 +98,12 @@ export default function Portfolio() {
                 variant="outline" 
                 size="lg"
                 data-testid="button-download-cv"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = cvFile;
+                  link.download = 'Alex_Nkusi_CV.pdf';
+                  link.click();
+                }}
               >
                 Download CV
               </Button>
@@ -92,7 +113,7 @@ export default function Portfolio() {
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span data-testid="availability-status">Available for projects</span>
               </div>
-              <span data-testid="location">Based in Kigali, Rwanda</span>
+              <span data-testid="location">Based in London, UK</span>
             </div>
           </div>
           <div className="relative">
@@ -158,7 +179,7 @@ export default function Portfolio() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20">
+      <section id="projects-section" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center space-y-6 mb-16">
             <h2 className="text-4xl font-bold text-primary" data-testid="projects-title">Featured Projects</h2>
