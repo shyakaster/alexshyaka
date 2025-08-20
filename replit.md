@@ -6,6 +6,31 @@ This is a full-stack blog platform built with React, TypeScript, Express.js, and
 
 Preferred communication style: Simple, everyday language.
 
+# Development Workflow
+
+## Git Workflow and Checkpoints
+The project uses a structured git workflow with automated checkpoint creation and meaningful commit messages. All development work is committed locally with descriptive messages before manual deployment to GitHub.
+
+### Git Workflow Scripts
+- **`./scripts/git-checkpoint.sh`**: Interactive script for creating structured commits with meaningful messages
+- **`./scripts/git-status.sh`**: Comprehensive overview of git repository status and recent commits  
+- **`./scripts/deploy-prep.sh`**: Pre-deployment checklist and validation
+
+### Commit Message Structure
+Commits follow a structured format:
+- **Type**: feat, fix, style, content, refactor, config, docs
+- **Description**: Brief summary of changes
+- **Details**: Optional detailed explanation
+- **Checkpoint timestamp**: Automatic timestamp for tracking
+
+### Deployment Process
+1. Make changes and test locally
+2. Create checkpoint: `./scripts/git-checkpoint.sh`
+3. Verify status: `./scripts/git-status.sh`
+4. Prepare for deployment: `./scripts/deploy-prep.sh`
+5. Push to GitHub: `git push origin main`
+6. Deploy via Replit (automatic if connected to GitHub)
+
 # System Architecture
 
 ## Frontend Architecture
