@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Homepage -->
   <url>
     <loc>https://alexshyaka.site/</loc>
-    <lastmod>2025-08-20T12:00:00+00:00</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://alexshyaka.site/assets/alex-profile.jpg</image:loc>
-      <image:title>Alex Nkusi Shyaka - EdTech Professional</image:title>
-      <image:caption>Alex Nkusi Shyaka, founder of CodeImpact, empowering African youth with technology skills</image:caption>
-    </image:image>
   </url>
   
   <!-- Blog Index -->
   <url>
     <loc>https://alexshyaka.site/blog</loc>
-    <lastmod>2025-08-20T12:00:00+00:00</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -30,66 +20,30 @@
   <!-- Blog Posts -->
   <url>
     <loc>https://alexshyaka.site/blog/building-market-ready-tech-skills-african-graduates</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <news:news>
-      <news:publication>
-        <news:name>Alex Shyaka's EdTech Dialogue</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2024-01-15</news:publication_date>
-      <news:title>Building Market-Ready Tech Skills for African Graduates</news:title>
-      <news:keywords>African Youth, Tech Skills, CodeImpact, Software Engineering</news:keywords>
-    </news:news>
   </url>
   
   <url>
     <loc>https://alexshyaka.site/blog/our-learning-journey-building-future-tech-leaders</loc>
-    <lastmod>2021-09-11T12:00:00+00:00</lastmod>
+    <lastmod>2021-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <news:news>
-      <news:publication>
-        <news:name>Alex Shyaka's EdTech Dialogue</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2021-09-11</news:publication_date>
-      <news:title>Our Learning Journey: Building Future Tech Leaders</news:title>
-      <news:keywords>Educational Innovation, Youth Leadership, Technology Education</news:keywords>
-    </news:news>
   </url>
   
   <url>
     <loc>https://alexshyaka.site/blog/attention-economy-affecting-teens-part-one</loc>
-    <lastmod>2021-02-20T12:00:00+00:00</lastmod>
+    <lastmod>2021-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <news:news>
-      <news:publication>
-        <news:name>Alex Shyaka's EdTech Dialogue</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2021-02-20</news:publication_date>
-      <news:title>The Attention Economy and How It's Affecting Our Teens</news:title>
-      <news:keywords>Digital Literacy, African Families, Youth Guidance</news:keywords>
-    </news:news>
   </url>
   
   <url>
     <loc>https://alexshyaka.site/blog/building-technology-community-uganda-global-practitioners</loc>
-    <lastmod>2020-12-02T12:00:00+00:00</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <news:news>
-      <news:publication>
-        <news:name>Alex Shyaka's EdTech Dialogue</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2020-12-02</news:publication_date>
-      <news:title>Building a Technology Community That Harnesses Global Practitioners</news:title>
-      <news:keywords>African Innovation, Tech Entrepreneurship, Community Building</news:keywords>
-    </news:news>
   </url>
   
 </urlset>
