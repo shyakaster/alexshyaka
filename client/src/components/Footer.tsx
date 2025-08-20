@@ -74,7 +74,7 @@ export default function Footer() {
     {
       name: "X",
       url: "https://x.com/shyakaster",
-      icon: "fab fa-x-twitter",
+      icon: "fab fa-twitter", 
       color: "hover:text-gray-800",
       bgColor: "hover:bg-gray-100"
     },

@@ -72,7 +72,7 @@ export default function Navigation() {
               className="text-secondary hover:text-primary transition-colors"
               data-testid="social-x"
             >
-              <i className="fab fa-x-twitter text-lg"></i>
+              <i className="fab fa-twitter text-lg"></i>
             </a>
             
             <Button
