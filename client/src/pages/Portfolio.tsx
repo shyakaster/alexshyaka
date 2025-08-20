@@ -31,10 +31,11 @@ export default function Portfolio() {
     },
     {
       title: "Mentoring & Community Building",
-      description: "Founder of [CodeImpact](https://codeimpact.co), mentoring aspiring developers and building sustainable tech communities across Africa.",
+      description: "Founder of CodeImpact, mentoring aspiring developers and building sustainable tech communities across Africa.",
       icon: "fas fa-users", 
       color: "bg-purple-100 text-purple-600",
-      tags: ["Developer Mentoring", "Community Building", "Youth Development", "Education"]
+      tags: ["Developer Mentoring", "Community Building", "Youth Development", "Education"],
+      hasLink: true
     }
   ];
 
@@ -56,7 +57,7 @@ export default function Portfolio() {
       codeUrl: "#"
     },
     {
-      title: "[CodeImpact](https://codeimpact.co) Developer Community",
+      title: "CodeImpact Developer Community",
       description: "Founded and built a thriving developer mentorship organization with 45+ registered members. Organizes 12-week coding classes for teens and helps developers transition to successful freelance careers.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
       tags: ["Community Building", "Mentoring", "Education"],
@@ -76,7 +77,7 @@ export default function Portfolio() {
                 EdTech Entrepreneur & Developer Community Builder
               </h1>
               <p className="text-xl text-secondary leading-relaxed max-w-lg" data-testid="hero-description">
-                Founder of [CodeImpact](https://codeimpact.co), passionate about empowering young Africans with market-ready tech skills. Combining data analysis expertise with educational technology to build sustainable developer communities and bridge the skills gap in Africa's tech ecosystem.
+                Founder of <a href="https://codeimpact.co" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">CodeImpact</a>, passionate about empowering young Africans with market-ready tech skills. Combining data analysis expertise with educational technology to build sustainable developer communities and bridge the skills gap in Africa's tech ecosystem.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -176,7 +177,22 @@ export default function Portfolio() {
                   {skill.title}
                 </h3>
                 <p className="text-secondary mb-6" data-testid={`skill-description-${index}`}>
-                  {skill.description}
+                  {skill.hasLink ? (
+                    <>
+                      Founder of{' '}
+                      <a 
+                        href="https://codeimpact.co" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-accent hover:underline font-medium"
+                      >
+                        CodeImpact
+                      </a>
+                      , mentoring aspiring developers and building sustainable tech communities across Africa.
+                    </>
+                  ) : (
+                    skill.description
+                  )}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {skill.tags.map((tag) => (
