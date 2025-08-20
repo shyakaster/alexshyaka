@@ -25,8 +25,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const emailMsg = {
         to: 'alex.nkusi@codeimpact.co',
-        from: email, // Use the form submitter's email as sender
-        replyTo: 'alex.nkusi@codeimpact.co',
+        from: 'alex.nkusi@codeimpact.co', // Use verified SendGrid email
+        replyTo: email, // Reply goes to the form submitter
         subject: emailSubject,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
