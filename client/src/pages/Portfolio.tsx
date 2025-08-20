@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import { BlogPost } from "@shared/schema";
 import alexProfileImage from "@assets/alex-new_1755685299395.jpeg";
-import cvFile from "@assets/CV_1755685547399.pdf";
 
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
@@ -93,19 +92,6 @@ export default function Portfolio() {
                 }}
               >
                 View My Work
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                data-testid="button-download-cv"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = cvFile;
-                  link.download = 'Alex_Nkusi_CV.pdf';
-                  link.click();
-                }}
-              >
-                Download CV
               </Button>
             </div>
             <div className="flex items-center space-x-8 text-sm text-secondary">
