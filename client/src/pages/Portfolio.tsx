@@ -5,6 +5,14 @@ import { useQuery } from "@tanstack/react-query";
 import { BlogPost } from "@shared/schema";
 import alexProfileImage from "@assets/alex-new_1755685299395.jpeg";
 
+// Import partnership images
+import andelaImg from "@assets/Image_fx (10)_1755692572025.jpg";
+import tungaImg from "@assets/Image_fx (11)_1755692572027.jpg";
+import kanzuImg from "@assets/Image_fx (12)_1755692572028.jpg";
+import outboxImg from "@assets/Image_fx (13)_1755692572028.jpg";
+import stuternImg from "@assets/Image_fx_1755692572029.jpg";
+import codeimpactImg from "@assets/Image_fx (14)_1755692572029.jpg";
+
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
@@ -83,7 +91,7 @@ export default function Portfolio() {
       title: "Andela",
       description: "Global Remote Talent Platform",
       details: "Collaborating with Andela to develop world-class African software engineers through comprehensive training programs and global placement opportunities.",
-      image: "/attached_assets/Image_fx%20(10)_1755692572025.jpg",
+      image: andelaImg,
       tags: ["Global Talent", "Software Engineering", "Remote Work"],
       website: "https://www.andela.com/",
       color: "from-green-500 to-blue-500"
@@ -92,7 +100,7 @@ export default function Portfolio() {
       title: "Tunga",
       description: "Tech Talent Marketplace",
       details: "Partnering with Tunga to connect skilled African developers with international tech companies and innovative project opportunities.",
-      image: "/attached_assets/Image_fx%20(11)_1755692572027.jpg",
+      image: tungaImg,
       tags: ["Tech Marketplace", "Developer Network", "International Projects"],
       website: "https://tunga.io/",
       color: "from-purple-500 to-pink-500"
@@ -101,7 +109,7 @@ export default function Portfolio() {
       title: "KanzuCode",
       description: "Coding Bootcamp Excellence",
       details: "Strategic alliance with KanzuCode to deliver intensive coding bootcamps that transform beginners into professional software developers.",
-      image: "/attached_assets/Image_fx%20(12)_1755692572028.jpg",
+      image: kanzuImg,
       tags: ["Bootcamp Training", "Full-Stack Development", "Career Transformation"],
       website: "https://kanzucode.com/",
       color: "from-orange-500 to-red-500"
@@ -110,7 +118,7 @@ export default function Portfolio() {
       title: "Outbox Uganda",
       description: "Innovation Hub & Incubator",
       details: "Collaborating with Outbox to nurture tech innovation and entrepreneurship across Uganda's vibrant startup ecosystem.",
-      image: "/attached_assets/Image_fx%20(13)_1755692572028.jpg",
+      image: outboxImg,
       tags: ["Innovation Hub", "Startup Incubation", "Tech Entrepreneurship"],
       website: "https://outboxuganda.org/",
       color: "from-teal-500 to-green-500"
@@ -119,7 +127,7 @@ export default function Portfolio() {
       title: "Stutern",
       description: "Career Acceleration Platform",
       details: "Partnering with Stutern to accelerate tech career growth through structured learning paths and industry-aligned skill development.",
-      image: "/attached_assets/Image_fx_1755692572029.jpg",
+      image: stuternImg,
       tags: ["Career Growth", "Skill Development", "Professional Training"],
       website: "https://stutern.com/",
       color: "from-blue-500 to-indigo-500"
@@ -128,7 +136,7 @@ export default function Portfolio() {
       title: "CodeImpact",
       description: "Youth Empowerment Initiative",
       details: "Leading CodeImpact's mission to empower young Africans with market-ready tech skills through practical education, mentorship, and sustainable community building across the continent.",
-      image: "/attached_assets/Image_fx%20(14)_1755692572029.jpg",
+      image: codeimpactImg,
       tags: ["Youth Empowerment", "Tech Education", "Community Building"],
       website: "https://codeimpact.co/",
       color: "from-emerald-500 to-cyan-500"
