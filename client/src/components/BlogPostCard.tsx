@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Bookmark } from "lucide-react";
 import { BlogPost } from "@shared/schema";
-import { getResolvedImagePath } from "@/pages/Portfolio";
+import { getResolvedImagePath, alexAuthorImage } from "@/pages/Portfolio";
 
 interface BlogPostCardProps {
   post: BlogPost;
@@ -130,6 +130,11 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center space-x-2">
             <Avatar className="w-8 h-8">
+              <img 
+                src={alexAuthorImage} 
+                alt="Alex Nkusi Shyaka"
+                className="w-full h-full object-cover rounded-full"
+              />
               <AvatarFallback className="bg-accent/10 text-accent text-sm">
                 AS
               </AvatarFallback>

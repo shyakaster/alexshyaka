@@ -17,6 +17,9 @@ import codeimpactImg from "@assets/Image_fx (17)_1755692843178.jpg";
 import blogThumb1 from "@assets/Image_fx (15)_1755693909853.jpg";
 import blogThumb2 from "@assets/Image_fx (16)_1755693909857.jpg";
 
+// Import new profile image for blog author
+import alexAuthorImage from "@assets/FB_IMG_1755674215490_1755694347500.jpg";
+
 // Create image mapping for blog posts
 export const getResolvedImagePath = (imagePath: string): string => {
   const imageMap: Record<string, string> = {
@@ -26,6 +29,9 @@ export const getResolvedImagePath = (imagePath: string): string => {
   
   return imageMap[imagePath] || imagePath;
 };
+
+// Export Alex's author image for blog posts
+export { alexAuthorImage };
 
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
