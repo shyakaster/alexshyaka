@@ -115,6 +115,37 @@ export default function Portfolio() {
               </div>
               <span data-testid="location">Based in London, UK</span>
             </div>
+            
+            {/* Social Media Links */}
+            <div className="flex items-center space-x-6">
+              <a 
+                href="https://www.linkedin.com/in/ankusi/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-accent transition-colors duration-200"
+                data-testid="social-linkedin"
+              >
+                <i className="fab fa-linkedin text-2xl"></i>
+              </a>
+              <a 
+                href="https://x.com/shyakaster" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-accent transition-colors duration-200"
+                data-testid="social-twitter"
+              >
+                <i className="fab fa-twitter text-2xl"></i>
+              </a>
+              <a 
+                href="https://github.com/shyakaster" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-accent transition-colors duration-200"
+                data-testid="social-github"
+              >
+                <i className="fab fa-github text-2xl"></i>
+              </a>
+            </div>
           </div>
           <div className="relative">
             <div className="relative w-full max-w-md mx-auto">

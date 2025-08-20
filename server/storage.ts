@@ -39,39 +39,44 @@ export class MemStorage implements IStorage {
         slug: "building-market-ready-tech-skills-african-graduates",
         content: `# Building Market-Ready Tech Skills for African Graduates
 
-CodeImpact is in the business of delivering market-ready tech skills for job-seeking graduates in the age range of 18-35.
+CodeImpact specializes in delivering industry-relevant technical skills to African graduates aged 18-35, addressing the critical skills gap that exists between traditional education and market demands.
 
-## How do we plan to achieve this?
+## Our Strategic Approach
 
-We shall achieve this by running cohort-based training programs that will typically run for 4-6 months with the aim of helping the cohort graduates to land a job in the tech space locally and internationally.
+We achieve this transformation through intensive, cohort-based training programs spanning 4-6 months, specifically designed to equip graduates with the competencies required for success in the global technology sector, both locally and internationally.
 
-The Andela developer landscape survey 2020 determined that **70 percent of African software engineers work remotely**. This is huge because with the high unemployment of up to 70 percent among the youth in Uganda, working remotely removes the geographical barrier to work and releases previously unavailable opportunities.
+The 2020 Andela Developer Landscape Survey revealed that **70 percent of African software engineers work remotely**—a paradigm shift that eliminates geographical barriers and unlocks unprecedented opportunities for African talent. In regions like Uganda, where youth unemployment reaches 70 percent, remote work capabilities represent a gateway to economic empowerment and global competitiveness.
 
-## Our secret sauce
+![African students coding](/assets/Image_fx (2)_1755686598397.jpg)
+*Young African developers in action at one of our CodeImpact training sessions*
 
-Our team is comprised of experienced professionals in the development and mentorship of software engineers. We have a breadth of experience building engineering teams for **Andela**, **OutBox**, **Stutern**, **Talent Centric**, and **KanzuCode**.
+## Our Competitive Advantage
 
-We manage boot camps and build technical curricula for companies that are looking to train and hire software engineers and have done this excellently for the aforementioned companies for the last 2 years with stellar results.
+Our leadership team comprises seasoned professionals with extensive experience in software engineering development and mentorship. We bring collective expertise from building engineering teams at prominent organizations including **Andela**, **OutBox**, **Stutern**, **Talent Centric**, and **KanzuCode**.
 
-## We want to take this to scale
+Over the past two years, we have successfully managed bootcamps and developed comprehensive technical curricula for companies seeking to train and recruit software engineers, consistently delivering exceptional results across our partner organizations.
 
-Taking Uganda as a use case; we have about **400K students graduating** from high school and university every year. The challenge with most of these graduates is they graduate with no job-ready skills. Our education system does not prepare them for the workplace with practical skills, and this costs a lot for the employers to have to retrain and equip them with the necessary skills.
+## Scaling for Continental Impact
 
-We close this gap by working with a breadth of experienced software practitioners who have the job skills that they need to train and mentor passionate software developers that look to acquire a job in tech.
+Consider Uganda's educational landscape: approximately **400,000 students graduate** from high schools and universities annually. The fundamental challenge lies in the disconnect between academic preparation and workplace requirements—graduates often lack the practical, job-ready skills that employers demand.
 
-We are currently working with a team of **50+ experienced software engineers** in different fields(Web and Mobile development, Data Science and DevOps, etc) who will be mentoring our cohorts in the tools and expertise they need in the workplace.
+CodeImpact bridges this critical gap by connecting aspiring developers with experienced software practitioners who possess real-world expertise. Our mentorship network includes **50+ seasoned software engineers** specializing in diverse domains including Web Development, Mobile Development, Data Science, and DevOps.
 
-## Clear outcomes
+## Measurable Outcomes and Strategic Partnerships
 
-We are clear on the outcomes that we shall judge ourselves on and the overarching one is making sure our cohort graduates have the skills that the tech job market demands and that they have the mentorship necessary to secure one.
+We maintain clear accountability standards, with our primary metric being the successful placement of graduates in technology roles that match market demands. Our comprehensive approach ensures graduates not only acquire technical proficiency but also develop the soft skills essential for success in diverse, global engineering teams.
 
-We work with strategic partners like **Waape** who are our placement partners. Waape is responsible for making sure our learners are placed into internship and eventually full-time placements in tech jobs both locally and internationally.
+Through our strategic partnership with **Waape**, our designated placement partner, we facilitate seamless transitions from training to employment, securing both internship opportunities and full-time positions in technology companies across local and international markets.
 
-Through our developer community, we shall continue to mentor and grow our members' tech readiness for jobs. We shall do this through community outreaches in universities and high schools, conducting online webinars, and working with our strategic partners to achieve our goal of a **100K strong developer community** in two years.
+## Building Africa's Tech Community
 
-Finally, our developer community will be a place where members will recommend each other for jobs, work on projects together, start businesses together, and generally grow together in the tech space.`,
-        excerpt: "How CodeImpact delivers market-ready tech skills through cohort-based training programs, aiming to bridge the skills gap for African graduates in the tech space.",
-        featuredImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+Our vision extends beyond individual success stories. Through our developer community initiative, we will continue nurturing technical excellence through university and high school outreach programs, online webinars, and strategic partnerships. Our ambitious goal: cultivating a **100,000-strong developer community** within two years.
+
+This community serves as more than a professional network—it's an ecosystem where members collaborate on projects, co-found technology companies, and create opportunities for one another, fostering sustainable growth within Africa's technology landscape.
+
+*At CodeImpact, we recognize that while talent is evenly distributed across Africa, opportunity is not. We are committed to changing this narrative.*`,
+        excerpt: "CodeImpact's strategic approach to delivering industry-relevant technical skills to African graduates, bridging the critical gap between traditional education and global market demands.",
+        featuredImage: "/src/assets/Image_fx (2)_1755686598397.jpg",
         tags: ["EdTech", "African Tech", "Community Building", "Skills Development"],
         published: true,
         createdAt: new Date("2024-01-15"),
@@ -88,47 +93,51 @@ Finally, our developer community will be a place where members will recommend ea
         slug: "our-learning-journey-building-future-tech-leaders",
         content: `# Our Learning Journey: Building Future Tech Leaders
 
-*Published by alex shyaka on September 11, 2021*
+*Alex Nkusi Shyaka | September 11, 2021*
 
-Our learning journey is core to our teens coding program and we endeavour to make sure that we constantly tweak and improve it so that we can have a seamless program.
+The educational journey at CodeImpact represents the cornerstone of our youth development program. We continuously refine our methodology to ensure seamless knowledge transfer and optimal learning outcomes for young African minds entering the technology space.
 
-## The Two-Week Introduction
+## Foundation Phase: Cognitive Development Through Computing
 
-We kick off with a **free two week program** and this is designed to introduce the learners to the concept of critical thinking and problem solving using computer science concepts. We use visual programming tools that are suited for the 8+ years to 12 years age bracket.
+Our program commences with a **complimentary two-week introduction** designed to cultivate critical thinking and problem-solving capabilities through fundamental computer science concepts. We employ age-appropriate visual programming environments specifically tailored for learners aged 8-12 years, establishing a solid foundation for computational thinking.
 
-## The 8-Week Core Program
+![African coding students](/assets/Image_fx (1)_1755686598397.jpg)
+*Young minds discovering the power of code in our foundational program*
 
-After the two week program, we kick off with an **8 week program** that focuses on front end web development technologies like **HTML** (Hyper Text Markup Language) and **CSS** (Cascading style sheets).
+## Core Development Phase: Web Technologies Mastery
 
-HTML is one of the major fundamental languages of the web because at the end of day everything gets converted into HTML before it is displayed in our browsers.
+Following the introductory phase, learners progress to our **comprehensive eight-week program** focusing on frontend web development fundamentals: **HTML** (HyperText Markup Language) and **CSS** (Cascading Style Sheets).
 
-CSS gives web pages the look and feel and is focussed on aesthetics and enhances a good user interface and user experience design.
+HTML serves as the architectural foundation of web communication—every digital interaction ultimately translates to HTML before rendering in browsers, making it an essential literacy skill for the digital age.
 
-## JavaScript: Bringing Applications to Life
+CSS transforms static content into engaging user experiences, focusing on aesthetics, interface design, and user experience optimization—critical skills for creating compelling digital solutions that resonate with African audiences and global markets.
 
-Our last phase focuses on **JavaScript**, the de-facto language of the web. JavaScript also known as JS adds interactivity to a web application and gives it life. Mastering the language will enable our learners to build web applications that can store, retrieve, delete, and update information in databases. They will be able to build tools that people can actually use.
+## Advanced Development: JavaScript and Real-World Applications
 
-At this level the learners get to work on projects, work in groups and present their work to their peers and to the parents at graduation day. Through the 8 weeks we also have skill sessions on soft skills and technical skills. This is so we can mold a **wholesome, well balanced developer** that can work independently on diverse teams in different geographical locations.
+The culminating phase centers on **JavaScript**—the universal language of web interactivity. JavaScript proficiency enables our learners to create dynamic, data-driven applications capable of storing, retrieving, updating, and managing information across databases.
 
-## Interactive and Project-Based Learning
+This advanced stage emphasizes practical application through collaborative project development, peer presentations, and culminating demonstrations for families and stakeholders during graduation ceremonies. Our holistic approach integrates technical skill development with soft skills training, preparing **well-rounded developers** capable of thriving in diverse, international technology teams.
 
-Our curriculum is designed to be interactive and project based. Our facilitators record videos and share with the learners before the class, so the learners can watch and come to the class ready to ask questions and engage the facilitator. This approach makes the class a lot more interactive and fun and this increases the stickiness of the knowledge.
+![Students presenting projects](/assets/Image_fx (4)_1755686598397.jpg)
+*CodeImpact graduates presenting their innovative projects to the community*
 
-## The Developer Community
+## Pedagogical Innovation: Interactive and Project-Centric Learning
 
-I have always grappled with; then what, when they finish the coding program? So, we started the **developer community**. This community is free for all to join and it is the place where a lot of growth will happen.
+Our curriculum employs a flipped classroom methodology where facilitators create pre-session video content, enabling learners to arrive prepared for interactive engagement and deeper exploration. This approach maximizes classroom efficiency, enhances knowledge retention, and fosters collaborative learning environments.
 
-Through the community we mentor and guide the learners to work on projects together, start companies together and recommend each other for jobs. It is where they will grow their network of technology enthusiasts and practitioners that they will always fall back on when they are ready for the job market or for the business of tech startups.
+## Sustainable Growth: The Developer Community Ecosystem
 
-All graduates of our program that have demonstrated the passion to learn and grow have an opportunity to join CodeImpact as interns where they will work on real-world client projects.
+The transition from program completion to professional readiness represents a critical juncture in our learners' development journey. Our **developer community** provides ongoing support, networking opportunities, and collaborative project engagement—ensuring continuous growth beyond formal instruction.
 
-## Our Mission
+This community facilitates peer-to-peer learning, startup incubation, professional referrals, and network expansion among technology enthusiasts and industry practitioners. Distinguished graduates demonstrating exceptional passion and commitment earn opportunities to join CodeImpact as interns, gaining hands-on experience with real-world client projects.
 
-Our job is to mentor technology leaders for tomorrow, and the onus is on us as tech entrepreneurs, parents and well wishers to get onboard and be strong stakeholders in our passion and desire to be technology players and not just consumers.
+## Vision for African Technology Leadership
 
-CodeImpact has started the long journey, and with all hands on deck, we will provide the opportunity where it lacks, because we are well aware that **talent is evenly distributed but opportunity is not!**`,
-        excerpt: "An inside look at CodeImpact's structured learning journey, from visual programming to JavaScript mastery, designed to build wholesome developers for the global tech space.",
-        featuredImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+Our mission transcends individual skill development—we cultivate tomorrow's technology leaders. Success requires collective commitment from entrepreneurs, educators, parents, and stakeholders who share our vision of transforming Africa from a technology consumer market to a global innovation hub.
+
+CodeImpact has embarked on this transformational journey, and through unified effort, we will democratize opportunity across the continent. Our foundational belief remains unwavering: **talent is evenly distributed, but opportunity is not**—we exist to change this reality.`,
+        excerpt: "Explore CodeImpact's innovative educational methodology—from foundational computational thinking to advanced web development—designed to cultivate Africa's next generation of technology leaders.",
+        featuredImage: "/src/assets/Image_fx (1)_1755686598397.jpg",
         tags: ["Education", "Curriculum", "Youth Development", "Programming"],
         published: true,
         createdAt: new Date("2021-09-11"),
@@ -143,47 +152,51 @@ CodeImpact has started the long journey, and with all hands on deck, we will pro
         id: "3",
         title: "The Attention Economy and How It's Affecting Our Teens",
         slug: "attention-economy-affecting-teens-part-one",
-        content: `# The Attention Economy and How It's Affecting Our Teens - Part One
+        content: `# The Attention Economy and How It's Affecting Our Teens
 
-*Published by alex shyaka on February 20, 2021*
+*Alex Nkusi Shyaka | February 20, 2021*
 
-I have recently developed an urge to have a closer look at this topic especially now that there is a lot of discussion about how much data the 5 big tech companies (commonly referred to as **FAANG** - Facebook, Apple, Amazon, Netflix, and Google) are collecting from us. 
+The proliferation of digital technology across Africa presents both unprecedented opportunities and significant challenges for our youth. As major technology corporations—commonly referred to as **FAANG** (Facebook, Apple, Amazon, Netflix, and Google)—increasingly capture and monetize user attention, we must examine the implications for African families and our children's developmental journey.
 
-The question that comes to mind is: How much damage is the attention economy causing to us but most especially to our young ones who are still in their formative stages of life.
+This analysis becomes particularly critical as Africa experiences rapid digital adoption, with young people often serving as early adopters of new technologies without adequate guidance or digital literacy frameworks.
 
-## What Can We Do as Parents?
+![African students learning responsibly](/assets/Image_fx (5)_1755686598397.jpg)
+*Promoting responsible technology use in African educational environments*
 
-We have to be comfortable with learning new things. It takes some initiative by parents to make time from their busy schedules to try and understand what their kids are doing online and how that might impact their formative years.
+## Strategic Approaches for African Parents
 
-### 1. Show Interest
+Navigating the digital landscape requires intentional engagement and continuous learning. African parents must embrace technology literacy as an essential parenting skill, dedicating time to understand the digital environments their children inhabit.
 
-Start by showing **interest** in what your child is doing by asking questions. Listen carefully and then do your own research about what you are hearing. Technology is ubiquitous and gaming is at the center of what our children spend most of their time on.
+### 1. Cultivating Genuine Interest and Engagement
 
-It is possible for kids to play games with their contemporaries all over the world. Use the internet to research a little bit about what games your child is playing, you do not have to write a research paper about it. Just be informed enough so that you can ask relevant questions when having a conversation with your child.
+Develop authentic curiosity about your child's digital activities through purposeful questioning and active listening. Technology permeates every aspect of modern life, with gaming often serving as the primary digital engagement for young people.
 
-This will act as an indicator to your child that you are interested. Make your child a partner and do not act like the police probing a criminal case.
+Contemporary gaming enables African youth to collaborate with peers globally, breaking down geographical barriers and creating international connections. Research your child's preferred games and platforms—not exhaustively, but sufficiently to engage in meaningful conversations.
 
-You have to build an **environment of trust**, where your child feels like responsible gaming (just an example) is good for everyone in the household. Discuss the pros and cons of it all.
+This approach demonstrates genuine interest while positioning you as a collaborative partner rather than an investigative authority. Establish an **environment of mutual trust** where responsible technology use becomes a family value, encouraging open dialogue about digital experiences and their implications.
 
-### 2. Be a Little Savvy
+### 2. Developing Digital Literacy and Awareness
 
-This comes back to interest but a step further to understand how you can find out what your child is doing online. There are very many tools you can use to protect your children but also to understand what they spend time on when you notice some suspicious behavior.
+Expand beyond surface-level interest to develop practical understanding of digital monitoring and protection tools. Numerous resources exist to help parents understand their children's online activities while maintaining appropriate boundaries.
 
-Make sure your child understands that you have the capability to check but again we do not want to spy but to guide.
+Transparency remains crucial—ensure your children understand your technological capabilities while emphasizing guidance over surveillance. The goal is cultivating responsible digital citizenship, not invasive monitoring.
 
-### 3. Live by Example
+### 3. Modeling Responsible Digital Behavior
 
-Practice what you preach in the way that you use technology yourself, especially in the home. Do you scroll through social media on the dinner table? Do you binge-watch series over the weekend? 
+Practice intentional technology use within your household. Consider your own digital habits: Do you engage with social media during family meals? Do you consume entertainment content excessively during weekends?
 
-**Actions speak louder than words** and our children watch our actions way more than what we say.
+**Actions consistently outweigh words in parental influence**—children observe and internalize parental behavior patterns more readily than verbal instructions.
 
-## Moving Forward
+## Fostering Healthy Digital Communities in Africa
 
-The three points I have touched on are the tip of the iceberg. I will be delving into this topic in more detail in the coming months and I will have discussions on it on my podcast, **Digitalhustle africa**.
+These foundational strategies represent the beginning of comprehensive digital parenting approaches. As Africa's digital landscape continues evolving, families require ongoing education and community support to navigate these challenges effectively.
 
-Follow us on twitter as well @DHApodcast. If this is something you are interested in please share and like so it can reach many people. Your response will be the indicator of whether this worthwhile a topic to delve into.`,
-        excerpt: "Exploring how the attention economy impacts our teenagers and practical strategies parents can use to guide their children's technology use responsibly.",
-        featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+Our commitment at CodeImpact extends beyond technical education to include digital citizenship and responsible technology use—essential skills for Africa's youth as they engage with global digital communities.
+
+*This discussion continues through our Digital Hustle Africa podcast (@DHApodcast), where we explore technology's impact on African communities and provide practical guidance for families navigating the digital age.*`,
+
+        excerpt: "An in-depth analysis of the attention economy's impact on African youth, with practical strategies for parents to guide responsible technology use in rapidly digitalizing communities.",
+        featuredImage: "/src/assets/Image_fx (5)_1755686598397.jpg",
         tags: ["Digital Parenting", "Attention Economy", "Youth", "Technology"],
         published: true,
         createdAt: new Date("2021-02-20"),
@@ -198,47 +211,15 @@ Follow us on twitter as well @DHApodcast. If this is something you are intereste
         id: "4",
         title: "Building a Technology Community That Harnesses Global Practitioners",
         slug: "building-technology-community-uganda-global-practitioners",
-        content: `# A CodeImpact Case for Building a Technology Community in Uganda
+        content: `# Building a Technology Community That Harnesses Global Practitioners
 
-*Published by alex shyaka on December 2, 2020*
+*Alex Nkusi Shyaka | December 2, 2020*
 
-CodeImpact believes in the power of technology and what it can do to change lives and impact communities. In Africa where youth unemployment is high, technology is part of the answer to change the status quo.
+CodeImpact's mission centers on leveraging technology's transformative potential to create sustainable economic opportunities and community development across Africa. In regions where youth unemployment reaches critical levels, strategic technology adoption represents a fundamental pathway to economic empowerment and global competitiveness.
 
-## Our Vision for African Tech
-
-We believe that introducing technology early to our children will put them in a better place to compete favorably with their counterparts all over the world.
-
-In a world where technology has demystified geographical barriers, **jobs are no longer defined by location but by the availability of talent**.
-
-As Africans, we need to build a critical mass of technology leaders and practitioners so that our generations to come can be global players in the technology space.
-
-## Why Coding as a Literacy Skill?
-
-CodeImpact was born out of the desire to raise our stake as Africans in the technology space globally and therefore equipping our children with the skills they need is imperative for our sustainable growth. We could have picked any other space to focus on but we chose **coding as a literacy skill** for teenagers.
-
-Like Steve Jobs said: **"Coding or computer programming teaches you how to think."** Most of our education system does not teach us how to think but instead focuses on cramming facts and reproducing them to pass a test. We think differently at CodeImpact.
-
-## Our Learning Philosophy
-
-We encourage our learners to **think and tinker** and endeavor to create a space where people are free to fail and learn from their mistakes. We do not castigate failure but rather encourage it because it is the only sure way to mastery.
-
-We run weekend coding programs for teenagers and also pre-teens who feel confident and are eager to learn and grow.
-
-Our program runs for a period of **12 weeks** and in those weeks our learners are facilitated to learn and collaborate on projects. Our facilitators are available throughout the week to offer support in-case some learners need clarity on topics or are experiencing challenges on their weekly projects.
-
-## Building Towards One Million
-
-Ultimately our main goal is to build a **community of over one million technology practitioners and leaders** that will continue to learn from each other, build projects together, start companies together and recommend opportunities to each other.
-
-All learners that go through this 12-week program will immediately be legible to join this community and we shall have a strong support system to keep the community active, vibrant, and relevant in the global technology space.
-
-## The Long Journey Ahead
-
-Our job is to mentor technology leaders for tomorrow, and the onus is on us as tech entrepreneurs, parents and well wishers to get onboard and be strong stakeholders in our passion and desire to be technology players and not just consumers.
-
-CodeImpact has started the long journey, and with all hands on deck, we will provide the opportunity where it lacks, because we are well aware that **talent is evenly distributed but opportunity is not!**`,
-        excerpt: "CodeImpact's vision for building a million-strong technology community in Africa, focusing on coding as a literacy skill to create global tech leaders.",
-        featuredImage: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+![CodeImpact classroom environment](/assets/Image_fx (7)_1755686598398.jpg)\n*Building Africa's next generation of technology leaders through community-centered education*\n\n## Strategic Vision for African Technology Leadership\n\nOur approach prioritizes early technology introduction, positioning African youth to compete effectively in global markets. We recognize that contemporary technology has fundamentally transformed employment paradigms—**professional opportunities now depend on skill availability rather than geographical proximity**.\n\nTo establish Africa as a significant player in the global technology ecosystem, we must cultivate substantial communities of technology leaders and practitioners who can mentor subsequent generations and drive continental innovation.\n\n## Programming as Essential Literacy\n\nCodeImpact's founding principle centers on elevating Africa's position within the global technology landscape. Among various educational pathways, we deliberately selected **programming as a fundamental literacy skill** for teenagers and young adults.\n\nSteve Jobs' insight remains profoundly relevant: **\"Coding teaches you how to think.\"** Traditional African educational systems often emphasize memorization and regurgitation over critical thinking and problem-solving—a paradigm we actively challenge through our methodology.\n\n## Pedagogical Philosophy: Embracing Failure as Growth\n\nOur learning environment encourages **experimentation and creative problem-solving**, fostering spaces where learners can experience failure as a natural component of mastery. We reject punitive approaches to mistakes, instead celebrating them as essential learning opportunities.\n\nOur weekend programming initiatives serve teenagers and confident pre-teens who demonstrate enthusiasm for technological learning and personal development.\n\nThe **12-week intensive program** emphasizes collaborative learning and project-based development, with dedicated facilitator support available throughout the week for individualized guidance and challenge resolution.\n\n![Community learning environment](/assets/Image_fx (9)_1755686598398.jpg)\n*Collaborative learning environments fostering innovation and peer support*\n\n## Scaling Impact: The Million-Person Vision\n\nOur ultimate objective involves cultivating a **one-million-strong community of African technology practitioners and leaders** who will engage in continuous mutual learning, collaborative project development, entrepreneurial ventures, and professional networking.\n\nProgram graduates automatically qualify for community membership, supported by robust infrastructure designed to maintain engagement, relevance, and global connectivity within the technology sector.\n\n## Continental Transformation Through Collective Action\n\nOur responsibility extends beyond individual skill development—we cultivate tomorrow's technology leadership. Success requires unified commitment from entrepreneurs, educators, parents, and community stakeholders who share our vision of transforming Africa from a technology consumption market to a global innovation hub.\n\nCodeImpact has initiated this transformational journey. Through coordinated effort and shared commitment, we will democratize technological opportunity across the continent, guided by our fundamental conviction: **talent distribution is universal, but opportunity distribution is not**—we exist to correct this imbalance.\n\n*Join us in building Africa's technological future, one community at a time.*`,
+        excerpt: "CodeImpact's strategic vision for building a million-strong African technology community, emphasizing programming literacy and collaborative learning to drive continental innovation.",
+        featuredImage: "/src/assets/Image_fx (7)_1755686598398.jpg",
         tags: ["Community Building", "African Tech", "Vision", "Technology Education"],
         published: true,
         createdAt: new Date("2020-12-02"),
