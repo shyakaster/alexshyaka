@@ -55,11 +55,11 @@ export default function Portfolio() {
 
   const skills = [
     {
-      title: "Financial Analysis & Modeling",
-      description: "Expert in statistical analysis, data modeling, risk assessment, and A/B testing for investment strategies and decision-making.",
+      title: "EdTech Data Analysis & Insights",
+      description: "Expert in educational data analysis, learning outcome modeling, and impact measurement to optimize tech education programs and student success.",
       icon: "fas fa-chart-line",
       color: "bg-accent/10 text-accent",
-      tags: ["Financial Modeling", "Risk Assessment", "Statistical Analysis", "A/B Testing"]
+      tags: ["Educational Analytics", "Learning Outcomes", "Impact Measurement", "Program Optimization"]
     },
     {
       title: "Technical Proficiency", 
@@ -228,7 +228,7 @@ export default function Portfolio() {
           <div className="text-center space-y-6 mb-16">
             <h2 className="text-4xl font-bold text-primary" data-testid="skills-title">Skills & Expertise</h2>
             <p className="text-lg text-secondary max-w-2xl mx-auto" data-testid="skills-description">
-              A comprehensive toolkit for building modern web applications and creating compelling technical content.
+              EdTech professional skilled in data analysis, passionate about empowering underserved youth with market-ready tech skills.
             </p>
           </div>
           
