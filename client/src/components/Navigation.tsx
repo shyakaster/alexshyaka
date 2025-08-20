@@ -49,7 +49,7 @@ export default function Navigation() {
           
           <div className="flex items-center space-x-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/shyakaster" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-secondary hover:text-primary transition-colors"
@@ -58,7 +58,7 @@ export default function Navigation() {
               <i className="fab fa-github text-lg"></i>
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/ankusi/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-secondary hover:text-primary transition-colors"
@@ -67,13 +67,13 @@ export default function Navigation() {
               <i className="fab fa-linkedin text-lg"></i>
             </a>
             <a 
-              href="https://twitter.com" 
+              href="https://x.com/shyakaster" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-secondary hover:text-primary transition-colors"
-              data-testid="social-twitter"
+              data-testid="social-x"
             >
-              <i className="fab fa-twitter text-lg"></i>
+              <i className="fab fa-x-twitter text-lg"></i>
             </a>
             
             <Button

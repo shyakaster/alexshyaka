@@ -181,7 +181,7 @@ export default function Portfolio() {
                 className="text-secondary hover:text-accent transition-colors duration-200"
                 data-testid="social-twitter"
               >
-                <i className="fab fa-twitter text-2xl"></i>
+                <i className="fab fa-x-twitter text-2xl"></i>
               </a>
               <a 
                 href="https://github.com/shyakaster" 

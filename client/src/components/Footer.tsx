@@ -66,21 +66,21 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/alexnkusi/",
+      url: "https://www.linkedin.com/in/ankusi/",
       icon: "fab fa-linkedin-in",
       color: "hover:text-blue-600",
       bgColor: "hover:bg-blue-100"
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com/alexnkusi",
-      icon: "fab fa-twitter",
-      color: "hover:text-blue-400",
-      bgColor: "hover:bg-blue-50"
+      name: "X",
+      url: "https://x.com/shyakaster",
+      icon: "fab fa-x-twitter",
+      color: "hover:text-gray-800",
+      bgColor: "hover:bg-gray-100"
     },
     {
       name: "GitHub",
-      url: "https://github.com/alexnkusi",
+      url: "https://github.com/shyakaster",
       icon: "fab fa-github",
       color: "hover:text-gray-800",
       bgColor: "hover:bg-gray-100"
@@ -123,7 +123,7 @@ export default function Footer() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-                <span>@alexnkusi</span>
+                <span>@shyakaster</span>
                 <span>•</span>
                 <span>Kampala, Uganda</span>
                 <span>•</span>
