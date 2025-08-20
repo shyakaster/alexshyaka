@@ -11,14 +11,56 @@ import fs from "fs";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve sitemap.xml with correct content-type
   app.get("/sitemap.xml", (req, res) => {
-    const sitemapPath = path.join(process.cwd(), "client/public/sitemap.xml");
-    
-    if (fs.existsSync(sitemapPath)) {
-      res.set('Content-Type', 'application/xml');
-      res.sendFile(sitemapPath);
-    } else {
-      res.status(404).send("Sitemap not found");
-    }
+    res.set('Content-Type', 'application/xml');
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://alexshyaka.site/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog Index -->
+  <url>
+    <loc>https://alexshyaka.site/blog</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://alexshyaka.site/blog/building-market-ready-tech-skills-african-graduates</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://alexshyaka.site/blog/our-learning-journey-building-future-tech-leaders</loc>
+    <lastmod>2021-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://alexshyaka.site/blog/attention-economy-affecting-teens-part-one</loc>
+    <lastmod>2021-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://alexshyaka.site/blog/building-technology-community-uganda-global-practitioners</loc>
+    <lastmod>2020-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>`);
   });
 
   // Serve robots.txt with correct content-type
@@ -32,6 +74,59 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(404).send("Robots.txt not found");
     }
   });
+  // Dynamic sitemap generation endpoint
+  app.get("/api/sitemap", async (req, res) => {
+    try {
+      res.set('Content-Type', 'application/xml');
+      
+      // Get all published blog posts
+      const posts = await storage.getBlogPosts({ published: true });
+      
+      // Generate sitemap XML
+      let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://alexshyaka.site/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog Index -->
+  <url>
+    <loc>https://alexshyaka.site/blog</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+
+      // Add blog posts
+      for (const post of posts) {
+        const lastmod = new Date(post.updatedAt || post.createdAt).toISOString().split('T')[0];
+        sitemap += `
+  
+  <!-- ${post.title} -->
+  <url>
+    <loc>https://alexshyaka.site/blog/${post.slug}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`;
+      }
+
+      sitemap += `
+  
+</urlset>`;
+
+      res.send(sitemap);
+    } catch (error) {
+      console.error("Error generating sitemap:", error);
+      res.status(500).send("Error generating sitemap");
+    }
+  });
+
   // Initialize SendGrid
   const mailService = new MailService();
   mailService.setApiKey(process.env.SENDGRID_API_KEY!);
