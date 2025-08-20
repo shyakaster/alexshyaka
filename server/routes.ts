@@ -6,6 +6,22 @@ import { ObjectStorageService } from "./objectStorage";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Admin password verification endpoint
+  app.post("/api/admin/verify", async (req, res) => {
+    try {
+      const { password } = req.body;
+      const adminPassword = process.env.ADMIN_PASSWORD || "codeimpact2024";
+      
+      if (password === adminPassword) {
+        res.json({ success: true });
+      } else {
+        res.status(401).json({ error: "Invalid password" });
+      }
+    } catch (error) {
+      console.error("Error verifying admin password:", error);
+      res.status(500).json({ error: "Server error" });
+    }
+  });
   // This endpoint is used to serve private objects that can be accessed publicly
   app.get("/objects/:objectPath(*)", async (req, res) => {
     const objectStorageService = new ObjectStorageService();

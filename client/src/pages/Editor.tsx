@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import ReactMarkdown from "react-markdown";
 import MarkdownEditor from "@/components/MarkdownEditor";
+import AdminAuth from "@/components/AdminAuth";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -132,7 +133,8 @@ export default function Editor() {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-gray-50">
+    <AdminAuth>
+      <div className="pt-24 min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-primary mb-2" data-testid="editor-title">
@@ -415,5 +417,6 @@ export default function Editor() {
         </Tabs>
       </div>
     </div>
+    </AdminAuth>
   );
 }
