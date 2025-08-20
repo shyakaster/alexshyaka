@@ -150,7 +150,7 @@ export default function Footer() {
           </div>
 
           {/* Right Section - Contact Form */}
-          <div className="space-y-6">
+          <div className="space-y-6" id="contact">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">Get In Touch</h3>
               <p className="text-gray-300">

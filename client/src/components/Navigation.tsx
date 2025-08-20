@@ -11,12 +11,22 @@ export default function Navigation() {
   const navItems = [
     { name: "Portfolio", path: "/" },
     { name: "Blog", path: "/blog" },
+    { name: "Get in Touch", path: "#contact", isScroll: true },
   ];
 
   const isActive = (path: string) => {
     if (path === "/" && location === "/") return true;
     if (path !== "/" && location.startsWith(path)) return true;
     return false;
+  };
+
+  const handleScrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -29,19 +39,30 @@ export default function Navigation() {
             </Link>
             <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className={cn(
-                    "text-sm font-medium transition-colors pb-1",
-                    isActive(item.path)
-                      ? "text-primary border-b-2 border-accent"
-                      : "text-secondary hover:text-primary"
-                  )}
-                  data-testid={`nav-${item.name.toLowerCase()}`}
-                >
-                  {item.name}
-                </Link>
+                item.isScroll ? (
+                  <button
+                    key={item.name}
+                    onClick={handleScrollToContact}
+                    className="text-sm font-medium text-secondary hover:text-primary transition-colors pb-1"
+                    data-testid={`nav-${item.name.toLowerCase().replace(' ', '-')}`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    className={cn(
+                      "text-sm font-medium transition-colors pb-1",
+                      isActive(item.path)
+                        ? "text-primary border-b-2 border-accent"
+                        : "text-secondary hover:text-primary"
+                    )}
+                    data-testid={`nav-${item.name.toLowerCase()}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -92,18 +113,29 @@ export default function Navigation() {
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className={cn(
-                    "text-sm font-medium transition-colors",
-                    isActive(item.path) ? "text-accent" : "text-secondary hover:text-primary"
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  data-testid={`mobile-nav-${item.name.toLowerCase()}`}
-                >
-                  {item.name}
-                </Link>
+                item.isScroll ? (
+                  <button
+                    key={item.name}
+                    onClick={handleScrollToContact}
+                    className="text-sm font-medium text-secondary hover:text-primary transition-colors text-left"
+                    data-testid={`mobile-nav-${item.name.toLowerCase().replace(' ', '-')}`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    className={cn(
+                      "text-sm font-medium transition-colors",
+                      isActive(item.path) ? "text-accent" : "text-secondary hover:text-primary"
+                    )}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    data-testid={`mobile-nav-${item.name.toLowerCase()}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
