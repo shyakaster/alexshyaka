@@ -28,7 +28,7 @@ Commits follow a structured format:
 2. Create checkpoint: `./scripts/git-checkpoint.sh`
 3. Verify status: `./scripts/git-status.sh`
 4. Prepare for deployment: `./scripts/deploy-prep.sh`
-5. Push to GitHub: `git push origin main`
+5. Push to GitHub: `git push`
 6. Deploy via Replit (automatic if connected to GitHub)
 
 # System Architecture

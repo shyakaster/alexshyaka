@@ -33,7 +33,7 @@ if [ "$LOCAL" != "$REMOTE" ] && [ "$REMOTE" != "unknown" ]; then
     AHEAD=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo "0")
     if [ "$AHEAD" -gt 0 ]; then
         echo -e "${YELLOW}📤 $AHEAD commit(s) ready to push${NC}"
-        echo -e "${BLUE}Next step: Push to GitHub with: git push origin main${NC}"
+        echo -e "${BLUE}Next step: Push to GitHub with: git push${NC}"
     fi
 else
     echo -e "${GREEN}✅ Local and remote are in sync${NC}"
@@ -65,7 +65,7 @@ echo "✅ Code builds successfully"
 echo "✅ Git history is clean"
 echo ""
 echo -e "${BLUE}To deploy:${NC}"
-echo "1. Push to GitHub: git push origin main"
+echo "1. Push to GitHub: git push"
 echo "2. Deploy on Replit (automatic if connected to GitHub)"
 echo "3. Verify deployment: Check your live URL"
 echo ""
