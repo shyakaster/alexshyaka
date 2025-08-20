@@ -13,7 +13,7 @@ export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
-  const categories = ["All Posts", "React", "Node.js", "Design", "JavaScript", "API", "Database"];
+  const categories = ["All Posts", "African Youth Empowerment", "Educational Innovation", "Future Leaders", "Digital Literacy", "Youth Leadership", "Technology Creation"];
 
   const { data: allPosts = [], isLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts", { published: true }],
@@ -79,10 +79,10 @@ export default function Blog() {
         {/* Blog Header */}
         <div className="text-center space-y-6 mb-16">
           <h1 className="text-5xl font-bold text-primary" data-testid="blog-title">
-            Technical Blog
+            EdTech Dialogue
           </h1>
           <p className="text-xl text-secondary max-w-2xl mx-auto" data-testid="blog-description">
-            Sharing insights on web development, technology trends, and lessons learned from building real-world applications.
+            Exploring educational technology innovations, youth empowerment strategies, and transformative learning experiences across Africa's dynamic tech landscape.
           </p>
           
           {/* Category Filters */}
