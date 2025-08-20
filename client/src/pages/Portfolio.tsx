@@ -74,10 +74,10 @@ export default function Portfolio() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight" data-testid="hero-title">
-                Graduate Investment Analyst & Data Expert
+                EdTech Entrepreneur & Developer Community Builder
               </h1>
               <p className="text-xl text-secondary leading-relaxed max-w-lg" data-testid="hero-description">
-                Experienced data analyst with 3+ years in financial modeling, SQL, and Python. Passionate about extracting actionable insights from complex datasets to drive strategic decision-making and mentoring the next generation of developers.
+                Founder of CodeImpact, passionate about empowering young Africans with market-ready tech skills. Combining data analysis expertise with educational technology to build sustainable developer communities and bridge the skills gap in Africa's tech ecosystem.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

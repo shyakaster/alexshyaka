@@ -1,0 +1,28 @@
+Our learning journey
+Published by alex shyaka on September 11, 2021
+Our learning journey is core to our teens coding program and we endeavour to make sure that we constantly tweak and improve it so that we can have a seamless program. 
+
+We kick off with a free two week program and this is designed to introduce the learners to the concept of critical thinking and problem solving using computer science concepts. We use visual programming tools that are suited for the 8+ years to 12 years age bracket
+
+After the two week program, we kick off with an 8 week program that focuses on front end web development technologies like HTML(Hyper Text Markup Language) and CSS(Cascading style sheets).
+
+HTML is one of the major fundamental languages of the web because at the end of day everything gets converted into HTML before it is displayed in our browsers. I will spare you the technical details. 
+
+CSS gives web pages the look and feel and is focussed on aesthetics and enhances a good user interface and user experience design.
+
+Our last phase focuses on Javascript, the de-facto language of the web. JavaScript also known as JS adds interactivity to a web application and gives it life. Mastering the language will enable our learners to build web applications that can store, retrieve, delete, and update information in databases. They will be able to build tools that people can actually use.
+
+At this level the learners get to work on projects, work in groups and present their work to their peers and to the parents at graduation day. Through the 8 weeks we also have skill sessions on soft skills and technical skills. This is so we can mold a wholesome, well balanced developer that can work independently on diverse teams in different geographical locations.
+
+
+Our curriculum is designed to be interactive and project based. Our facilitators record videos and share with the learners before the class, so the learners can watch and come to the class ready to ask questions and engage the facilitator. This approach makes the class a lot more interactive and fun and this increases the stickiness of the knowledge.
+
+I have always grappled with;  then what, when they finish the coding program? So, we started the developer community. This community is free for all to join and it is the place where a lot of growth will happen. 
+
+Through the community we mentor and guide the learners to work on projects together, start companies together and recommend each other for jobs. It is where they will grow their network of technology enthusiasts and practitioners that they will always fall back on when they are ready for the job market or for the business of tech startups.
+
+All graduates of our program that have demonstrated the passion to learn and grow have an opportunity to join CodeImpact as interns where they will work on real-world client projects.
+
+Our job is to mentor technology leaders for tomorrow, and the onus is on us as tech entrepreneurs, parents and well wishers to get onboard and be strong stakeholders in our passion and desire to be technology players and not just consumers. 
+
+CodeImpact has started the long journey, and with all hands on deck, we will provide the opportunity where it lacks, because we are well aware that talent is evenly distributed but opportunity is not!

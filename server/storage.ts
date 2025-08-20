@@ -31,106 +31,227 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
-    // Create some sample blog posts for demonstration
-    const samplePosts: BlogPost[] = [
+    // Create real blog posts from CodeImpact content
+    const realPosts: BlogPost[] = [
       {
         id: "1",
-        title: "The Evolution of JavaScript Frameworks: What's Next?",
-        slug: "evolution-javascript-frameworks-whats-next",
-        content: `# The Evolution of JavaScript Frameworks: What's Next?
+        title: "Building Market-Ready Tech Skills for African Graduates",
+        slug: "building-market-ready-tech-skills-african-graduates",
+        content: `# Building Market-Ready Tech Skills for African Graduates
 
-The JavaScript ecosystem has evolved dramatically over the past decade, with new frameworks and libraries emerging regularly. As we look toward the future, it's essential to understand not just where we've been, but where we're heading.
+CodeImpact is in the business of delivering market-ready tech skills for job-seeking graduates in the age range of 18-35.
 
-## The Current Landscape
+## How do we plan to achieve this?
 
-Today's frontend development is dominated by a few key players: **React** continues to lead in adoption, **Vue.js** offers an approachable alternative, and **Angular** remains strong in enterprise environments. However, newer frameworks like **Svelte** and **Solid.js** are gaining traction with their compile-time optimizations and innovative approaches to reactivity.
+We shall achieve this by running cohort-based training programs that will typically run for 4-6 months with the aim of helping the cohort graduates to land a job in the tech space locally and internationally.
 
-> "The best framework is the one that gets out of your way and lets you build great user experiences efficiently."
+The Andela developer landscape survey 2020 determined that **70 percent of African software engineers work remotely**. This is huge because with the high unemployment of up to 70 percent among the youth in Uganda, working remotely removes the geographical barrier to work and releases previously unavailable opportunities.
 
-## Performance-First Frameworks
+## Our secret sauce
 
-One of the most significant trends we're seeing is the shift toward performance-first frameworks. Svelte's compile-time approach eliminates the need for a virtual DOM, while Solid.js uses fine-grained reactivity to minimize re-renders.
+Our team is comprised of experienced professionals in the development and mentorship of software engineers. We have a breadth of experience building engineering teams for **Andela**, **OutBox**, **Stutern**, **Talent Centric**, and **KanzuCode**.
 
-\`\`\`javascript
-// Svelte's reactive approach
-let count = 0;
-$: doubled = count * 2;
+We manage boot camps and build technical curricula for companies that are looking to train and hire software engineers and have done this excellently for the aforementioned companies for the last 2 years with stellar results.
 
-// Solid.js fine-grained reactivity
-const [count, setCount] = createSignal(0);
-const doubled = createMemo(() => count() * 2);
-\`\`\`
+## We want to take this to scale
 
-## What's Next?
+Taking Uganda as a use case; we have about **400K students graduating** from high school and university every year. The challenge with most of these graduates is they graduate with no job-ready skills. Our education system does not prepare them for the workplace with practical skills, and this costs a lot for the employers to have to retrain and equip them with the necessary skills.
 
-Looking ahead, I expect to see continued innovation in several areas:
+We close this gap by working with a breadth of experienced software practitioners who have the job skills that they need to train and mentor passionate software developers that look to acquire a job in tech.
 
-- **Edge Computing Integration:** Frameworks designed for edge environments will become mainstream
-- **AI-Powered Development:** Tools that understand and generate framework-specific code
-- **Zero-Bundle Architectures:** Native ES modules and HTTP/2 enabling new deployment strategies
+We are currently working with a team of **50+ experienced software engineers** in different fields(Web and Mobile development, Data Science and DevOps, etc) who will be mentoring our cohorts in the tools and expertise they need in the workplace.
 
-The JavaScript framework landscape will continue to evolve, but the future looks bright. We're moving toward more efficient, developer-friendly tools that don't compromise on performance or user experience.`,
-        excerpt: "Exploring the current landscape of JavaScript frameworks and emerging trends that will shape frontend development in the coming years.",
-        featuredImage: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
-        tags: ["JavaScript", "React", "Frameworks"],
+## Clear outcomes
+
+We are clear on the outcomes that we shall judge ourselves on and the overarching one is making sure our cohort graduates have the skills that the tech job market demands and that they have the mentorship necessary to secure one.
+
+We work with strategic partners like **Waape** who are our placement partners. Waape is responsible for making sure our learners are placed into internship and eventually full-time placements in tech jobs both locally and internationally.
+
+Through our developer community, we shall continue to mentor and grow our members' tech readiness for jobs. We shall do this through community outreaches in universities and high schools, conducting online webinars, and working with our strategic partners to achieve our goal of a **100K strong developer community** in two years.
+
+Finally, our developer community will be a place where members will recommend each other for jobs, work on projects together, start businesses together, and generally grow together in the tech space.`,
+        excerpt: "How CodeImpact delivers market-ready tech skills through cohort-based training programs, aiming to bridge the skills gap for African graduates in the tech space.",
+        featuredImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+        tags: ["EdTech", "African Tech", "Community Building", "Skills Development"],
         published: true,
-        createdAt: new Date("2024-03-15"),
-        updatedAt: new Date("2024-03-15"),
+        createdAt: new Date("2024-01-15"),
+        updatedAt: new Date("2024-01-15"),
         metadata: {
-          readTime: 8,
-          views: 1200,
-          author: "Alex Shyaka"
+          readTime: 5,
+          views: 850,
+          author: "Alex Nkusi Shyaka"
         }
       },
       {
         id: "2",
-        title: "RESTful API Design: Principles and Best Practices",
-        slug: "restful-api-design-principles-best-practices",
-        content: `# RESTful API Design: Principles and Best Practices
+        title: "Our Learning Journey: Building Future Tech Leaders",
+        slug: "our-learning-journey-building-future-tech-leaders",
+        content: `# Our Learning Journey: Building Future Tech Leaders
 
-A comprehensive guide to designing clean, maintainable REST APIs. Covering HTTP methods, status codes, resource naming, and documentation best practices.
+*Published by alex shyaka on September 11, 2021*
 
-## Core Principles
+Our learning journey is core to our teens coding program and we endeavour to make sure that we constantly tweak and improve it so that we can have a seamless program.
 
-REST (Representational State Transfer) is an architectural style that defines a set of constraints for creating web services. When designing RESTful APIs, it's important to follow these core principles...`,
-        excerpt: "A comprehensive guide to designing clean, maintainable REST APIs covering HTTP methods, status codes, and best practices.",
-        featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
-        tags: ["API", "REST", "Backend"],
+## The Two-Week Introduction
+
+We kick off with a **free two week program** and this is designed to introduce the learners to the concept of critical thinking and problem solving using computer science concepts. We use visual programming tools that are suited for the 8+ years to 12 years age bracket.
+
+## The 8-Week Core Program
+
+After the two week program, we kick off with an **8 week program** that focuses on front end web development technologies like **HTML** (Hyper Text Markup Language) and **CSS** (Cascading style sheets).
+
+HTML is one of the major fundamental languages of the web because at the end of day everything gets converted into HTML before it is displayed in our browsers.
+
+CSS gives web pages the look and feel and is focussed on aesthetics and enhances a good user interface and user experience design.
+
+## JavaScript: Bringing Applications to Life
+
+Our last phase focuses on **JavaScript**, the de-facto language of the web. JavaScript also known as JS adds interactivity to a web application and gives it life. Mastering the language will enable our learners to build web applications that can store, retrieve, delete, and update information in databases. They will be able to build tools that people can actually use.
+
+At this level the learners get to work on projects, work in groups and present their work to their peers and to the parents at graduation day. Through the 8 weeks we also have skill sessions on soft skills and technical skills. This is so we can mold a **wholesome, well balanced developer** that can work independently on diverse teams in different geographical locations.
+
+## Interactive and Project-Based Learning
+
+Our curriculum is designed to be interactive and project based. Our facilitators record videos and share with the learners before the class, so the learners can watch and come to the class ready to ask questions and engage the facilitator. This approach makes the class a lot more interactive and fun and this increases the stickiness of the knowledge.
+
+## The Developer Community
+
+I have always grappled with; then what, when they finish the coding program? So, we started the **developer community**. This community is free for all to join and it is the place where a lot of growth will happen.
+
+Through the community we mentor and guide the learners to work on projects together, start companies together and recommend each other for jobs. It is where they will grow their network of technology enthusiasts and practitioners that they will always fall back on when they are ready for the job market or for the business of tech startups.
+
+All graduates of our program that have demonstrated the passion to learn and grow have an opportunity to join CodeImpact as interns where they will work on real-world client projects.
+
+## Our Mission
+
+Our job is to mentor technology leaders for tomorrow, and the onus is on us as tech entrepreneurs, parents and well wishers to get onboard and be strong stakeholders in our passion and desire to be technology players and not just consumers.
+
+CodeImpact has started the long journey, and with all hands on deck, we will provide the opportunity where it lacks, because we are well aware that **talent is evenly distributed but opportunity is not!**`,
+        excerpt: "An inside look at CodeImpact's structured learning journey, from visual programming to JavaScript mastery, designed to build wholesome developers for the global tech space.",
+        featuredImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+        tags: ["Education", "Curriculum", "Youth Development", "Programming"],
         published: true,
-        createdAt: new Date("2024-03-12"),
-        updatedAt: new Date("2024-03-12"),
+        createdAt: new Date("2021-09-11"),
+        updatedAt: new Date("2021-09-11"),
         metadata: {
-          readTime: 6,
-          views: 890,
-          author: "Alex Shyaka"
+          readTime: 7,
+          views: 1200,
+          author: "Alex Nkusi Shyaka"
         }
       },
       {
         id: "3",
-        title: "Database Performance Optimization Techniques",
-        slug: "database-performance-optimization-techniques",
-        content: `# Database Performance Optimization Techniques
+        title: "The Attention Economy and How It's Affecting Our Teens",
+        slug: "attention-economy-affecting-teens-part-one",
+        content: `# The Attention Economy and How It's Affecting Our Teens - Part One
 
-Learn how to identify performance bottlenecks and optimize your database queries. Covering indexing strategies, query optimization, and monitoring tools.
+*Published by alex shyaka on February 20, 2021*
 
-## Understanding Performance Bottlenecks
+I have recently developed an urge to have a closer look at this topic especially now that there is a lot of discussion about how much data the 5 big tech companies (commonly referred to as **FAANG** - Facebook, Apple, Amazon, Netflix, and Google) are collecting from us. 
 
-Database performance issues can stem from various sources...`,
-        excerpt: "Learn how to identify performance bottlenecks and optimize your database queries with indexing strategies and monitoring tools.",
-        featuredImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
-        tags: ["Database", "Performance", "SQL"],
+The question that comes to mind is: How much damage is the attention economy causing to us but most especially to our young ones who are still in their formative stages of life.
+
+## What Can We Do as Parents?
+
+We have to be comfortable with learning new things. It takes some initiative by parents to make time from their busy schedules to try and understand what their kids are doing online and how that might impact their formative years.
+
+### 1. Show Interest
+
+Start by showing **interest** in what your child is doing by asking questions. Listen carefully and then do your own research about what you are hearing. Technology is ubiquitous and gaming is at the center of what our children spend most of their time on.
+
+It is possible for kids to play games with their contemporaries all over the world. Use the internet to research a little bit about what games your child is playing, you do not have to write a research paper about it. Just be informed enough so that you can ask relevant questions when having a conversation with your child.
+
+This will act as an indicator to your child that you are interested. Make your child a partner and do not act like the police probing a criminal case.
+
+You have to build an **environment of trust**, where your child feels like responsible gaming (just an example) is good for everyone in the household. Discuss the pros and cons of it all.
+
+### 2. Be a Little Savvy
+
+This comes back to interest but a step further to understand how you can find out what your child is doing online. There are very many tools you can use to protect your children but also to understand what they spend time on when you notice some suspicious behavior.
+
+Make sure your child understands that you have the capability to check but again we do not want to spy but to guide.
+
+### 3. Live by Example
+
+Practice what you preach in the way that you use technology yourself, especially in the home. Do you scroll through social media on the dinner table? Do you binge-watch series over the weekend? 
+
+**Actions speak louder than words** and our children watch our actions way more than what we say.
+
+## Moving Forward
+
+The three points I have touched on are the tip of the iceberg. I will be delving into this topic in more detail in the coming months and I will have discussions on it on my podcast, **Digitalhustle africa**.
+
+Follow us on twitter as well @DHApodcast. If this is something you are interested in please share and like so it can reach many people. Your response will be the indicator of whether this worthwhile a topic to delve into.`,
+        excerpt: "Exploring how the attention economy impacts our teenagers and practical strategies parents can use to guide their children's technology use responsibly.",
+        featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+        tags: ["Digital Parenting", "Attention Economy", "Youth", "Technology"],
         published: true,
-        createdAt: new Date("2024-03-08"),
-        updatedAt: new Date("2024-03-08"),
+        createdAt: new Date("2021-02-20"),
+        updatedAt: new Date("2021-02-20"),
         metadata: {
-          readTime: 10,
-          views: 1500,
-          author: "Alex Shyaka"
+          readTime: 6,
+          views: 950,
+          author: "Alex Nkusi Shyaka"
+        }
+      },
+      {
+        id: "4",
+        title: "Building a Technology Community That Harnesses Global Practitioners",
+        slug: "building-technology-community-uganda-global-practitioners",
+        content: `# A CodeImpact Case for Building a Technology Community in Uganda
+
+*Published by alex shyaka on December 2, 2020*
+
+CodeImpact believes in the power of technology and what it can do to change lives and impact communities. In Africa where youth unemployment is high, technology is part of the answer to change the status quo.
+
+## Our Vision for African Tech
+
+We believe that introducing technology early to our children will put them in a better place to compete favorably with their counterparts all over the world.
+
+In a world where technology has demystified geographical barriers, **jobs are no longer defined by location but by the availability of talent**.
+
+As Africans, we need to build a critical mass of technology leaders and practitioners so that our generations to come can be global players in the technology space.
+
+## Why Coding as a Literacy Skill?
+
+CodeImpact was born out of the desire to raise our stake as Africans in the technology space globally and therefore equipping our children with the skills they need is imperative for our sustainable growth. We could have picked any other space to focus on but we chose **coding as a literacy skill** for teenagers.
+
+Like Steve Jobs said: **"Coding or computer programming teaches you how to think."** Most of our education system does not teach us how to think but instead focuses on cramming facts and reproducing them to pass a test. We think differently at CodeImpact.
+
+## Our Learning Philosophy
+
+We encourage our learners to **think and tinker** and endeavor to create a space where people are free to fail and learn from their mistakes. We do not castigate failure but rather encourage it because it is the only sure way to mastery.
+
+We run weekend coding programs for teenagers and also pre-teens who feel confident and are eager to learn and grow.
+
+Our program runs for a period of **12 weeks** and in those weeks our learners are facilitated to learn and collaborate on projects. Our facilitators are available throughout the week to offer support in-case some learners need clarity on topics or are experiencing challenges on their weekly projects.
+
+## Building Towards One Million
+
+Ultimately our main goal is to build a **community of over one million technology practitioners and leaders** that will continue to learn from each other, build projects together, start companies together and recommend opportunities to each other.
+
+All learners that go through this 12-week program will immediately be legible to join this community and we shall have a strong support system to keep the community active, vibrant, and relevant in the global technology space.
+
+## The Long Journey Ahead
+
+Our job is to mentor technology leaders for tomorrow, and the onus is on us as tech entrepreneurs, parents and well wishers to get onboard and be strong stakeholders in our passion and desire to be technology players and not just consumers.
+
+CodeImpact has started the long journey, and with all hands on deck, we will provide the opportunity where it lacks, because we are well aware that **talent is evenly distributed but opportunity is not!**`,
+        excerpt: "CodeImpact's vision for building a million-strong technology community in Africa, focusing on coding as a literacy skill to create global tech leaders.",
+        featuredImage: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+        tags: ["Community Building", "African Tech", "Vision", "Technology Education"],
+        published: true,
+        createdAt: new Date("2020-12-02"),
+        updatedAt: new Date("2020-12-02"),
+        metadata: {
+          readTime: 8,
+          views: 1100,
+          author: "Alex Nkusi Shyaka"
         }
       }
     ];
 
-    samplePosts.forEach(post => {
+    realPosts.forEach(post => {
       this.blogPosts.set(post.id, post);
     });
   }

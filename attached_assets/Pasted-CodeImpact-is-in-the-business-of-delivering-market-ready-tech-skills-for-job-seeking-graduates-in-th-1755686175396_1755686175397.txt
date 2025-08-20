@@ -1,0 +1,33 @@
+CodeImpact is in the business of delivering market-ready tech skills for job-seeking graduates in the age range of 18-35.
+
+How do we plan to achieve this?
+
+We shall achieve this by running cohort-based training programs that will typically run for 4-6 months with the aim of helping the cohort graduates to land a job in the tech space locally and internationally. 
+
+The Andela developer landscape survey 2020 determined that 70 percent of African software engineers work remotely. This is huge because with the high unemployment of up to 70 percent among the youth in Uganda, working remotely removes the geographical barrier to work and releases previously unavailable opportunities.
+
+Our secret sauce
+
+Our team is comprised of experienced professionals in the development and mentorship of software engineers. We have a breadth of experience building engineering teams for Andela, OutBox, Stutern, Talent Centric, and KanzuCode. 
+
+We manage boot camps and build technical curricula for companies that are looking to train and hire software engineers and have done this excellently for the aforementioned companies for the last 2 years with stellar results.
+
+We want to take this to scale
+
+Taking Uganda as a use case; we have about 400K students graduating from high school and university every year. The challenge with most of these graduates is they graduate with no job-ready skills. Our education system does not prepare them for the workplace with practical skills, and this costs a lot for the employers to have to retrain and equip them with the necessary skills.
+
+We close this gap by working with a breadth of experienced software practitioners who have the job skills that they need to train and mentor passionate software developers that look to acquire a job in tech. 
+
+We are currently working with a team of 50+ experienced software engineers in different fields(Web and Mobile development, Data Science and DevOps, etc) who will be mentoring our cohorts in the tools and expertise they need in the workplace.
+
+We are also aware that just acquiring technical skills is not enough. The contemporary developer requires soft skills as well which are crucial for their success in working on diverse engineering teams all over the world. Cognisant of this, we work with industry experts to deliver skills like effective spoken and written communication, integration on diverse teams, building a professional online presence, etc.
+
+Clear outcomes
+
+We are clear on the outcomes that we shall judge ourselves on and the overarching one is making sure our cohort graduates have the skills that the tech job market demands and that they have the mentorship necessary to secure one. 
+
+We work with strategic partners like Waape who are our placement partners. Waape is responsible for making sure our learners are placed into internship and eventually full-time placements in tech jobs both locally and internationally.
+
+Through our developer community, we shall continue to mentor and grow our members’ tech readiness for jobs. We shall do this through community outreaches in universities and high schools, conducting online webinars, and working with our strategic partners to achieve our goal of a 100K strong developer community in two years. 
+
+Finally, our developer community will be a place where members will recommend each other for jobs, work on projects together, start businesses together, and generally grow together in the tech space.
