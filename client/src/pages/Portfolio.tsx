@@ -123,6 +123,15 @@ export default function Portfolio() {
       tags: ["Career Growth", "Skill Development", "Professional Training"],
       website: "https://stutern.com/",
       color: "from-blue-500 to-indigo-500"
+    },
+    {
+      title: "CodeImpact",
+      description: "Youth Empowerment Initiative",
+      details: "Leading CodeImpact's mission to empower young Africans with market-ready tech skills through practical education, mentorship, and sustainable community building across the continent.",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      tags: ["Youth Empowerment", "Tech Education", "Community Building"],
+      website: "https://codeimpact.co/",
+      color: "from-emerald-500 to-cyan-500"
     }
   ];
 
@@ -352,7 +361,7 @@ export default function Portfolio() {
           <div className="mt-16 bg-gradient-to-r from-accent/5 to-blue-500/5 rounded-2xl p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">5+</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">6</div>
                 <div className="text-secondary font-medium">Partner Organizations</div>
                 <div className="text-xs text-gray-500">Leading African tech companies</div>
               </div>
