@@ -14,6 +14,7 @@ import SocialShare from "@/components/SocialShare";
 import { BlogPost, Comment, insertCommentSchema } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { getResolvedImagePath } from "@/pages/Portfolio";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -203,7 +204,7 @@ export default function BlogPostPage() {
         {post.featuredImage && (
           <div className="mb-12">
             <img 
-              src={post.featuredImage}
+              src={getResolvedImagePath(post.featuredImage)}
               alt={post.title}
               className="w-full h-96 object-cover rounded-xl shadow-lg"
               data-testid="post-featured-image"

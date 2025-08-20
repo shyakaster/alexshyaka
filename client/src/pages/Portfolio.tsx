@@ -17,6 +17,16 @@ import codeimpactImg from "@assets/Image_fx (17)_1755692843178.jpg";
 import blogThumb1 from "@assets/Image_fx (15)_1755693909853.jpg";
 import blogThumb2 from "@assets/Image_fx (16)_1755693909857.jpg";
 
+// Create image mapping for blog posts
+export const getResolvedImagePath = (imagePath: string): string => {
+  const imageMap: Record<string, string> = {
+    "/src/assets/Image_fx (15)_1755693909853.jpg": blogThumb1,
+    "/src/assets/Image_fx (16)_1755693909857.jpg": blogThumb2,
+  };
+  
+  return imageMap[imagePath] || imagePath;
+};
+
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
@@ -421,7 +431,7 @@ export default function Portfolio() {
                 <Link href={`/blog/${post.slug}`}>
                   <div className="relative overflow-hidden rounded-t-xl">
                     <img 
-                      src={post.featuredImage || "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300"}
+                      src={getResolvedImagePath(post.featuredImage || "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300")}
                       alt={post.title}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       data-testid={`preview-post-image-${post.id}`}

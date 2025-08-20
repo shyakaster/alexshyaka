@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Bookmark } from "lucide-react";
 import { BlogPost } from "@shared/schema";
+import { getResolvedImagePath } from "@/pages/Portfolio";
 
 interface BlogPostCardProps {
   post: BlogPost;
@@ -79,7 +80,7 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
       <Link href={`/blog/${post.slug}`}>
         <div className="relative overflow-hidden rounded-t-xl">
           <img 
-            src={post.featuredImage || "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300"} 
+            src={getResolvedImagePath(post.featuredImage || "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300")} 
             alt={post.title}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             data-testid={`blog-image-${post.id}`}
