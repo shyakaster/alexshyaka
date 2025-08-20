@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import BlogPostCard from "@/components/BlogPostCard";
 import { BlogPost } from "@shared/schema";
+import SEO from "@/components/SEO";
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -75,6 +76,13 @@ export default function Blog() {
 
   return (
     <div className="pt-24">
+      <SEO
+        title="EdTech Dialogue - Alex Nkusi Shyaka's Blog | African Youth Empowerment & Educational Technology"
+        description="Explore Alex Nkusi Shyaka's insights on educational technology, youth empowerment strategies, and transformative learning experiences across Africa's dynamic tech landscape. CodeImpact founder sharing expertise in EdTech innovation."
+        keywords="EdTech Blog, Alex Nkusi Shyaka, Educational Technology, African Youth Empowerment, CodeImpact, Tech Education, African Innovation, Youth Leadership, Digital Learning, Software Development Training"
+        url="https://alexshyaka.site/blog"
+        type="website"
+      />
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Blog Header */}
         <div className="text-center space-y-6 mb-16">

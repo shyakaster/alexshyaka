@@ -15,6 +15,7 @@ import { BlogPost, Comment, insertCommentSchema } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { getResolvedImagePath, alexAuthorImage } from "@/pages/Portfolio";
+import SEO, { generateBlogPostStructuredData } from "@/components/SEO";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -143,6 +144,17 @@ export default function BlogPostPage() {
 
   return (
     <div className="pt-24">
+      <SEO
+        title={`${post.title} - Alex Nkusi Shyaka | EdTech Blog`}
+        description={post.excerpt || post.content.substring(0, 160).replace(/[#*]/g, '')}
+        keywords={`${post.tags?.join(', ')}, Alex Nkusi Shyaka, EdTech, CodeImpact, African Youth`}
+        image={post.featuredImage ? `https://alexshyaka.site${getResolvedImagePath(post.featuredImage)}` : "https://alexshyaka.site/og-image.jpg"}
+        url={`https://alexshyaka.site/blog/${post.slug}`}
+        type="article"
+        publishedTime={new Date(post.createdAt).toISOString()}
+        modifiedTime={new Date(post.updatedAt || post.createdAt).toISOString()}
+        structuredData={generateBlogPostStructuredData(post)}
+      />
       <article className="max-w-4xl mx-auto px-6 py-16">
         {/* Post Header */}
         <header className="space-y-8 mb-12">

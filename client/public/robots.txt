@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alexshyaka.site/sitemap.xml
+
+# Optimize crawl budget
+Crawl-delay: 1
+
+# Block admin/private paths if any exist in future
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow important resources
+Allow: /assets/
+Allow: /api/blog-posts
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.gif
+Allow: /*.webp

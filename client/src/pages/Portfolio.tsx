@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import { BlogPost } from "@shared/schema";
+import SEO, { generatePersonStructuredData, generateWebsiteStructuredData } from "@/components/SEO";
 import alexProfileImage from "@assets/alex-new_1755685299395.jpeg";
 
 // Import partnership images
@@ -45,6 +46,12 @@ export default function Portfolio() {
       return response.json();
     },
   });
+
+  // Combine person and website structured data
+  const combinedStructuredData = [
+    generatePersonStructuredData(),
+    generateWebsiteStructuredData()
+  ];
 
   // Function to convert markdown links to clickable HTML links
   const renderTextWithLinks = (text: string) => {
@@ -169,6 +176,14 @@ export default function Portfolio() {
 
   return (
     <div className="pt-24">
+      <SEO
+        title="Alex Nkusi Shyaka - EdTech Professional & CodeImpact Founder | African Youth Empowerment"
+        description="Alex Nkusi Shyaka is an EdTech professional and founder of CodeImpact, empowering young Africans with market-ready tech skills. Based in Kampala, Uganda, specializing in educational technology, software engineering mentorship, and youth development across Africa."
+        keywords="Alex Nkusi Shyaka, Alex Shyaka, CodeImpact, EdTech, Educational Technology, African Youth, Tech Skills, Uganda, Kampala, Software Engineering, Developer Training, Youth Empowerment, African Tech Community"
+        url="https://alexshyaka.site/"
+        type="website"
+        structuredData={combinedStructuredData}
+      />
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
