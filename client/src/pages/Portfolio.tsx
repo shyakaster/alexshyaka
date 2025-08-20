@@ -379,9 +379,9 @@ export default function Portfolio() {
                 <div className="text-xs text-gray-500">Across multiple programs</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">3</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">4</div>
                 <div className="text-secondary font-medium">Countries Reached</div>
-                <div className="text-xs text-gray-500">Uganda, Rwanda, Kenya</div>
+                <div className="text-xs text-gray-500">Uganda, Kenya, Rwanda, Nigeria</div>
               </div>
             </div>
           </div>
