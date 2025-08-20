@@ -81,43 +81,48 @@ export default function Portfolio() {
   const partners = [
     {
       title: "Andela",
-      description: "Technical Curriculum Development",
-      details: "Partnered with Andela to develop comprehensive technical curricula that prepare African developers for global opportunities in software engineering and technology leadership.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Curriculum", "Technical Training", "Global Opportunities"],
-      website: "#"
+      description: "Global Remote Talent Platform",
+      details: "Collaborating with Andela to develop world-class African software engineers through comprehensive training programs and global placement opportunities.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      tags: ["Global Talent", "Software Engineering", "Remote Work"],
+      website: "https://www.andela.com/",
+      color: "from-green-500 to-blue-500"
     },
     {
       title: "Tunga",
-      description: "Learning Platform Content",
-      details: "Collaborated with Tunga to create engaging learning platform content that connects African software developers with international clients and projects.",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Platform Development", "Content Creation", "Remote Work"],
-      website: "#"
+      description: "Tech Talent Marketplace",
+      details: "Partnering with Tunga to connect skilled African developers with international tech companies and innovative project opportunities.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      tags: ["Tech Marketplace", "Developer Network", "International Projects"],
+      website: "https://tunga.io/",
+      color: "from-purple-500 to-pink-500"
     },
     {
       title: "KanzuCode",
-      description: "Software Engineer Training",
-      details: "Strategic partnership with KanzuCode to deliver intensive software engineer training programs focused on practical skills and industry-ready development practices.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Software Engineering", "Intensive Training", "Practical Skills"],
-      website: "#"
+      description: "Coding Bootcamp Excellence",
+      details: "Strategic alliance with KanzuCode to deliver intensive coding bootcamps that transform beginners into professional software developers.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      tags: ["Bootcamp Training", "Full-Stack Development", "Career Transformation"],
+      website: "https://kanzucode.com/",
+      color: "from-orange-500 to-red-500"
     },
     {
-      title: "Outbox",
-      description: "Curriculum Development",
-      details: "Working with Outbox to design innovative curriculum development strategies that bridge the gap between academic learning and real-world application in technology.",
-      image: "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Innovation", "Curriculum Design", "Academic Bridge"],
-      website: "#"
+      title: "Outbox Uganda",
+      description: "Innovation Hub & Incubator",
+      details: "Collaborating with Outbox to nurture tech innovation and entrepreneurship across Uganda's vibrant startup ecosystem.",
+      image: "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      tags: ["Innovation Hub", "Startup Incubation", "Tech Entrepreneurship"],
+      website: "https://outboxuganda.org/",
+      color: "from-teal-500 to-green-500"
     },
     {
       title: "Stutern",
-      description: "Technical Learning Development",
-      details: "Partnering with Stutern to advance technical learning development programs that accelerate career growth for African tech talent in emerging markets.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Career Growth", "Technical Development", "Emerging Markets"],
-      website: "#"
+      description: "Career Acceleration Platform",
+      details: "Partnering with Stutern to accelerate tech career growth through structured learning paths and industry-aligned skill development.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      tags: ["Career Growth", "Skill Development", "Professional Training"],
+      website: "https://stutern.com/",
+      color: "from-blue-500 to-indigo-500"
     }
   ];
 
@@ -270,72 +275,96 @@ export default function Portfolio() {
       <section id="projects-section" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center space-y-6 mb-16">
-            <h2 className="text-4xl font-bold text-primary" data-testid="partnerships-title">CodeImpact Partnerships</h2>
-            <p className="text-lg text-secondary max-w-2xl mx-auto" data-testid="partnerships-description">
-              Strategic collaborations with leading African tech organizations to scale impact and empower youth across the continent.
+            <h2 className="text-5xl font-bold text-primary mb-6" data-testid="partnerships-title">
+              Strategic <span className="text-accent">Partnerships</span>
+            </h2>
+            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed" data-testid="partnerships-description">
+              Collaborating with Africa's leading tech organizations to democratize access to world-class technology education and create pathways to global opportunities.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {partners.map((partner, index) => (
               <div key={index} className="group" data-testid={`partner-card-${index}`}>
-                <div className="relative overflow-hidden rounded-xl mb-6">
-                  <img 
-                    src={partner.image}
-                    alt={partner.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    data-testid={`partner-image-${index}`}
-                  />
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-primary" data-testid={`partner-title-${index}`}>
-                    {partner.title}
-                  </h3>
-                  <p className="text-accent font-medium mb-2" data-testid={`partner-description-${index}`}>
-                    {partner.description}
-                  </p>
-                  <p className="text-secondary text-sm" data-testid={`partner-details-${index}`}>
-                    {partner.details}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {partner.tags.map((tag) => (
-                      <Badge 
-                        key={tag}
-                        className="bg-accent/10 text-accent"
-                        data-testid={`partner-tag-${tag}`}
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-200">
+                  {/* Gradient Header */}
+                  <div className={`h-2 bg-gradient-to-r ${partner.color}`}></div>
+                  
+                  {/* Image Section */}
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={partner.image}
+                      alt={partner.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-testid={`partner-image-${index}`}
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${partner.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
                   </div>
-                  <div className="mt-4">
-                    <a 
-                      href={partner.website} 
-                      className="text-accent hover:text-blue-600 font-medium inline-flex items-center"
-                      data-testid={`partner-website-${index}`}
-                    >
-                      Learn More <i className="fas fa-external-link-alt ml-1 text-sm"></i>
-                    </a>
+                  
+                  {/* Content Section */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300" data-testid={`partner-title-${index}`}>
+                        {partner.title}
+                      </h3>
+                      <p className="text-accent font-semibold text-sm uppercase tracking-wide" data-testid={`partner-description-${index}`}>
+                        {partner.description}
+                      </p>
+                    </div>
+                    
+                    <p className="text-secondary leading-relaxed text-sm" data-testid={`partner-details-${index}`}>
+                      {partner.details}
+                    </p>
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {partner.tags.map((tag) => (
+                        <Badge 
+                          key={tag}
+                          className="bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors duration-200 text-xs"
+                          data-testid={`partner-tag-${tag}`}
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    {/* Visit Website Button */}
+                    <div className="pt-4 border-t border-gray-100">
+                      <a 
+                        href={partner.website}
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        className={`inline-flex items-center justify-center w-full px-4 py-2 rounded-lg bg-gradient-to-r ${partner.color} text-white font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5`}
+                        data-testid={`partner-website-${index}`}
+                      >
+                        Visit Website
+                        <i className="fas fa-external-link-alt ml-2 text-sm"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          {/* Impact Statistics */}
+          <div className="mt-16 bg-gradient-to-r from-accent/5 to-blue-500/5 rounded-2xl p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-accent">5+</div>
-                <div className="text-secondary">Partner Organizations</div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">5+</div>
+                <div className="text-secondary font-medium">Partner Organizations</div>
+                <div className="text-xs text-gray-500">Leading African tech companies</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">1000+</div>
-                <div className="text-secondary">Students Impacted</div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">1000+</div>
+                <div className="text-secondary font-medium">Students Impacted</div>
+                <div className="text-xs text-gray-500">Across multiple programs</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">3</div>
-                <div className="text-secondary">Countries Reached</div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">3</div>
+                <div className="text-secondary font-medium">Countries Reached</div>
+                <div className="text-xs text-gray-500">Uganda, Rwanda, Kenya</div>
               </div>
             </div>
           </div>
