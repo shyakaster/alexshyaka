@@ -11,7 +11,7 @@ import tungaImg from "@assets/Image_fx (11)_1755692572027.jpg";
 import kanzuImg from "@assets/Image_fx (12)_1755692572028.jpg";
 import outboxImg from "@assets/Image_fx (13)_1755692572028.jpg";
 import stuternImg from "@assets/Image_fx_1755692572029.jpg";
-import codeimpactImg from "@assets/Image_fx (14)_1755692572029.jpg";
+import codeimpactImg from "@assets/Image_fx (17)_1755692843178.jpg";
 
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
