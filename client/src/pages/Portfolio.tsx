@@ -83,7 +83,7 @@ export default function Portfolio() {
       title: "Andela",
       description: "Global Remote Talent Platform",
       details: "Collaborating with Andela to develop world-class African software engineers through comprehensive training programs and global placement opportunities.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Global Talent", "Software Engineering", "Remote Work"],
       website: "https://www.andela.com/",
       color: "from-green-500 to-blue-500"
@@ -92,7 +92,7 @@ export default function Portfolio() {
       title: "Tunga",
       description: "Tech Talent Marketplace",
       details: "Partnering with Tunga to connect skilled African developers with international tech companies and innovative project opportunities.",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Tech Marketplace", "Developer Network", "International Projects"],
       website: "https://tunga.io/",
       color: "from-purple-500 to-pink-500"
@@ -101,7 +101,7 @@ export default function Portfolio() {
       title: "KanzuCode",
       description: "Coding Bootcamp Excellence",
       details: "Strategic alliance with KanzuCode to deliver intensive coding bootcamps that transform beginners into professional software developers.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Bootcamp Training", "Full-Stack Development", "Career Transformation"],
       website: "https://kanzucode.com/",
       color: "from-orange-500 to-red-500"
@@ -110,7 +110,7 @@ export default function Portfolio() {
       title: "Outbox Uganda",
       description: "Innovation Hub & Incubator",
       details: "Collaborating with Outbox to nurture tech innovation and entrepreneurship across Uganda's vibrant startup ecosystem.",
-      image: "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Innovation Hub", "Startup Incubation", "Tech Entrepreneurship"],
       website: "https://outboxuganda.org/",
       color: "from-teal-500 to-green-500"
@@ -119,7 +119,7 @@ export default function Portfolio() {
       title: "Stutern",
       description: "Career Acceleration Platform",
       details: "Partnering with Stutern to accelerate tech career growth through structured learning paths and industry-aligned skill development.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       tags: ["Career Growth", "Skill Development", "Professional Training"],
       website: "https://stutern.com/",
       color: "from-blue-500 to-indigo-500"
