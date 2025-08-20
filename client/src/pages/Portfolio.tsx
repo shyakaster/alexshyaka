@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
 import { BlogPost } from "@shared/schema";
+import alexProfileImage from "@assets/alex-new_1755685299395.jpeg";
 
 export default function Portfolio() {
   const { data: latestPosts = [] } = useQuery<BlogPost[]>({
@@ -97,7 +98,7 @@ export default function Portfolio() {
           <div className="relative">
             <div className="relative w-full max-w-md mx-auto">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=600" 
+                src={alexProfileImage} 
                 alt="Alex Shyaka - Professional headshot" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
                 data-testid="hero-image"
