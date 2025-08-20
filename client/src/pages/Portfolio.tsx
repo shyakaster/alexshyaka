@@ -16,6 +16,8 @@ import codeimpactImg from "@assets/Image_fx (17)_1755692843178.jpg";
 // Import new blog thumbnails
 import blogThumb1 from "@assets/Image_fx (15)_1755693909853.jpg";
 import blogThumb2 from "@assets/Image_fx (16)_1755693909857.jpg";
+import blogThumb3 from "@assets/Image_fx (5)_1755686598397.jpg";
+import blogThumb4 from "@assets/Image_fx (7)_1755686598398.jpg";
 
 // Import new profile image for blog author
 import alexAuthorImage from "@assets/FB_IMG_1755674215490_1755694347500.jpg";
@@ -25,6 +27,8 @@ export const getResolvedImagePath = (imagePath: string): string => {
   const imageMap: Record<string, string> = {
     "/src/assets/Image_fx (15)_1755693909853.jpg": blogThumb1,
     "/src/assets/Image_fx (16)_1755693909857.jpg": blogThumb2,
+    "/src/assets/Image_fx (5)_1755686598397.jpg": blogThumb3,
+    "/src/assets/Image_fx (7)_1755686598398.jpg": blogThumb4,
   };
   
   return imageMap[imagePath] || imagePath;
