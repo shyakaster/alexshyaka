@@ -4,8 +4,80 @@ import { storage } from "./storage";
 import { insertBlogPostSchema, insertCommentSchema } from "@shared/schema";
 import { ObjectStorageService } from "./objectStorage";
 import { z } from "zod";
+import { MailService } from '@sendgrid/mail';
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Initialize SendGrid
+  const mailService = new MailService();
+  mailService.setApiKey(process.env.SENDGRID_API_KEY!);
+
+  // Contact form email endpoint
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const { name, email, subject, message } = req.body;
+      
+      // Validation
+      if (!name || !email || !message) {
+        return res.status(400).json({ error: "Name, email, and message are required" });
+      }
+
+      const emailSubject = subject ? `${subject} - From ${name}` : `New message from ${name}`;
+      
+      const emailMsg = {
+        to: 'alex.nkusi@codeimpact.co',
+        from: 'noreply@alexshyaka.com', // Use a verified sender email
+        subject: emailSubject,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #333; border-bottom: 2px solid #007acc; padding-bottom: 10px;">
+              New Contact Form Message
+            </h2>
+            
+            <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+              <p><strong>From:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Subject:</strong> ${subject || 'No subject'}</p>
+            </div>
+            
+            <div style="background: white; padding: 20px; border-left: 4px solid #007acc; margin: 20px 0;">
+              <h3 style="color: #333; margin-top: 0;">Message:</h3>
+              <p style="line-height: 1.6; color: #555;">${message.replace(/\n/g, '<br>')}</p>
+            </div>
+            
+            <div style="background: #f0f8ff; padding: 15px; border-radius: 5px; margin-top: 20px;">
+              <p style="margin: 0; color: #666; font-size: 14px;">
+                <strong>Reply to:</strong> ${email}<br>
+                <strong>Sent from:</strong> Alex Nkusi Portfolio Website<br>
+                <strong>Time:</strong> ${new Date().toLocaleString()}
+              </p>
+            </div>
+          </div>
+        `,
+        text: `
+New Contact Form Message
+
+From: ${name}
+Email: ${email}
+Subject: ${subject || 'No subject'}
+
+Message:
+${message}
+
+Reply to: ${email}
+Sent from: Alex Nkusi Portfolio Website
+Time: ${new Date().toLocaleString()}
+        `
+      };
+
+      await mailService.send(emailMsg);
+      
+      res.json({ success: true, message: "Email sent successfully" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      res.status(500).json({ error: "Failed to send email" });
+    }
+  });
+
   // Admin password verification endpoint
   app.post("/api/admin/verify", async (req, res) => {
     try {

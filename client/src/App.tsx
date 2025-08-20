@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import Portfolio from "@/pages/Portfolio";
 import Blog from "@/pages/Blog";
 import BlogPostPage from "@/pages/BlogPost";
@@ -26,11 +27,12 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white flex flex-col">
           <Navigation />
-          <main>
+          <main className="flex-1">
             <Router />
           </main>
+          <Footer />
           <Toaster />
         </div>
       </TooltipProvider>
