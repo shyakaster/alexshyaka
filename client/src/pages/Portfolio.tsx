@@ -78,30 +78,46 @@ export default function Portfolio() {
     }
   ];
 
-  const projects = [
+  const partners = [
     {
-      title: "Investment Opportunity Analysis",
-      description: "Built predictive models using Python to evaluate potential returns and enhance investment decision-making. Designed Power BI dashboards visualizing risk factors and growth opportunities for stakeholders.",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Python", "Power BI", "Financial Modeling"],
-      liveUrl: "#",
-      codeUrl: "#"
-    },
-    {
-      title: "Portfolio Risk Assessment",
-      description: "Conducted comprehensive data analysis on portfolio performance using SQL, identifying high-risk investments and suggesting mitigation strategies. Created Tableau dashboards to support data-driven financial planning.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["SQL", "Tableau", "Risk Analysis"],
-      liveUrl: "#",
-      codeUrl: "#"
-    },
-    {
-      title: "CodeImpact Developer Community",
-      description: "Founded and built a thriving developer mentorship organization with 45+ registered members. Organizes 12-week coding classes for teens and helps developers transition to successful freelance careers.",
+      title: "Andela",
+      description: "Technical Curriculum Development",
+      details: "Partnered with Andela to develop comprehensive technical curricula that prepare African developers for global opportunities in software engineering and technology leadership.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      tags: ["Community Building", "Mentoring", "Education"],
-      liveUrl: "#",
-      codeUrl: "#"
+      tags: ["Curriculum", "Technical Training", "Global Opportunities"],
+      website: "#"
+    },
+    {
+      title: "Tunga",
+      description: "Learning Platform Content",
+      details: "Collaborated with Tunga to create engaging learning platform content that connects African software developers with international clients and projects.",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["Platform Development", "Content Creation", "Remote Work"],
+      website: "#"
+    },
+    {
+      title: "KanzuCode",
+      description: "Software Engineer Training",
+      details: "Strategic partnership with KanzuCode to deliver intensive software engineer training programs focused on practical skills and industry-ready development practices.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["Software Engineering", "Intensive Training", "Practical Skills"],
+      website: "#"
+    },
+    {
+      title: "Outbox",
+      description: "Curriculum Development",
+      details: "Working with Outbox to design innovative curriculum development strategies that bridge the gap between academic learning and real-world application in technology.",
+      image: "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["Innovation", "Curriculum Design", "Academic Bridge"],
+      website: "#"
+    },
+    {
+      title: "Stutern",
+      description: "Technical Learning Development",
+      details: "Partnering with Stutern to advance technical learning development programs that accelerate career growth for African tech talent in emerging markets.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      tags: ["Career Growth", "Technical Development", "Emerging Markets"],
+      website: "#"
     }
   ];
 
@@ -250,60 +266,56 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* CodeImpact Partnerships */}
       <section id="projects-section" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center space-y-6 mb-16">
-            <h2 className="text-4xl font-bold text-primary" data-testid="projects-title">Featured Projects</h2>
-            <p className="text-lg text-secondary max-w-2xl mx-auto" data-testid="projects-description">
-              A selection of recent work showcasing technical expertise and creative problem-solving.
+            <h2 className="text-4xl font-bold text-primary" data-testid="partnerships-title">CodeImpact Partnerships</h2>
+            <p className="text-lg text-secondary max-w-2xl mx-auto" data-testid="partnerships-description">
+              Strategic collaborations with leading African tech organizations to scale impact and empower youth across the continent.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {projects.map((project, index) => (
-              <div key={index} className="group" data-testid={`project-card-${index}`}>
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {partners.map((partner, index) => (
+              <div key={index} className="group" data-testid={`partner-card-${index}`}>
                 <div className="relative overflow-hidden rounded-xl mb-6">
                   <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    data-testid={`project-image-${index}`}
+                    src={partner.image}
+                    alt={partner.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-testid={`partner-image-${index}`}
                   />
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-primary" data-testid={`project-title-${index}`}>
-                    {project.title}
+                  <h3 className="text-xl font-semibold text-primary" data-testid={`partner-title-${index}`}>
+                    {partner.title}
                   </h3>
-                  <p className="text-secondary" data-testid={`project-description-${index}`}>
-                    {project.description}
+                  <p className="text-accent font-medium mb-2" data-testid={`partner-description-${index}`}>
+                    {partner.description}
+                  </p>
+                  <p className="text-secondary text-sm" data-testid={`partner-details-${index}`}>
+                    {partner.details}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
+                    {partner.tags.map((tag) => (
                       <Badge 
                         key={tag}
                         className="bg-accent/10 text-accent"
-                        data-testid={`project-tag-${tag}`}
+                        data-testid={`partner-tag-${tag}`}
                       >
                         {tag}
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="mt-4">
                     <a 
-                      href={project.liveUrl} 
-                      className="text-accent hover:text-blue-600 font-medium"
-                      data-testid={`project-live-${index}`}
+                      href={partner.website} 
+                      className="text-accent hover:text-blue-600 font-medium inline-flex items-center"
+                      data-testid={`partner-website-${index}`}
                     >
-                      View Project
-                    </a>
-                    <a 
-                      href={project.codeUrl} 
-                      className="text-secondary hover:text-primary"
-                      data-testid={`project-code-${index}`}
-                    >
-                      <i className="fab fa-github mr-1"></i> Code
+                      Learn More <i className="fas fa-external-link-alt ml-1 text-sm"></i>
                     </a>
                   </div>
                 </div>
@@ -312,13 +324,20 @@ export default function Portfolio() {
           </div>
 
           <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
-              size="lg"
-              data-testid="button-view-all-projects"
-            >
-              View All Projects
-            </Button>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-accent">5+</div>
+                <div className="text-secondary">Partner Organizations</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-accent">1000+</div>
+                <div className="text-secondary">Students Impacted</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-accent">3</div>
+                <div className="text-secondary">Countries Reached</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
