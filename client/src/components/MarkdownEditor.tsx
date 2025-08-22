@@ -5,6 +5,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { ObjectUploader } from "@/components/ObjectUploader";
 import { 
   Bold, 
@@ -17,7 +23,8 @@ import {
   List, 
   Upload,
   Save,
-  Eye
+  Eye,
+  ChevronDown
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -117,7 +124,18 @@ export default function MarkdownEditor({
     { icon: Code, action: () => insertMarkdown("`", "`", "code"), title: "Inline Code" },
     { type: "separator" },
     { icon: Quote, action: () => insertMarkdown("> ", "", "quote"), title: "Quote" },
-    { icon: List, action: () => insertMarkdown("- ", "", "list item"), title: "List" },
+    { 
+      type: "dropdown", 
+      icon: List, 
+      title: "Lists",
+      options: [
+        { label: "• Bullet List", action: () => insertMarkdown("- ", "", "list item") },
+        { label: "* Bullet List", action: () => insertMarkdown("* ", "", "list item") },
+        { label: "+ Bullet List", action: () => insertMarkdown("+ ", "", "list item") },
+        { label: "1. Numbered List", action: () => insertMarkdown("1. ", "", "list item") },
+        { label: "a) Letter List", action: () => insertMarkdown("a) ", "", "list item") },
+      ]
+    },
   ];
 
   const handleGetUploadParameters = async () => {
@@ -138,12 +156,10 @@ export default function MarkdownEditor({
       const imageUrl = uploadedFile.uploadURL;
       const fileName = uploadedFile.name?.replace(/\.[^/.]+$/, "") || "image";
       
-      // Store current cursor position before async operation
-      const textarea = textareaRef.current;
-      const cursorPos = textarea ? textarea.selectionStart : content.length;
+      console.log("Image uploaded:", { imageUrl, fileName });
       
-      // Convert GCS URL to our object endpoint
       try {
+        // Convert GCS URL to our object endpoint
         const response = await fetch("/api/objects/upload", {
           method: "PUT",
           headers: {
@@ -154,32 +170,25 @@ export default function MarkdownEditor({
         
         if (response.ok) {
           const data = await response.json();
-          const objectPath = data.objectPath || imageUrl;
-          const imageMarkdown = `![${fileName}](${objectPath})`;
+          const objectPath = data.objectPath;
+          const imageMarkdown = `\n![${fileName}](${objectPath})\n`;
           
-          // Insert at stored cursor position
-          const newContent = content.substring(0, cursorPos) + imageMarkdown + content.substring(cursorPos);
-          setContent(newContent);
+          console.log("Processed image path:", objectPath);
           
-          // Set cursor after the inserted image
+          // Simply append to content for now to ensure it works
+          setContent(content + imageMarkdown);
+          
+          // Focus textarea
           setTimeout(() => {
-            if (textarea) {
-              textarea.focus();
-              const newPos = cursorPos + imageMarkdown.length;
-              textarea.setSelectionRange(newPos, newPos);
+            if (textareaRef.current) {
+              textareaRef.current.focus();
             }
-          }, 0);
+          }, 100);
         } else {
-          // Fallback to direct URL
-          const imageMarkdown = `![${fileName}](${imageUrl})`;
-          const newContent = content.substring(0, cursorPos) + imageMarkdown + content.substring(cursorPos);
-          setContent(newContent);
+          console.error("Failed to process image URL");
         }
       } catch (error) {
         console.error("Error processing image:", error);
-        const imageMarkdown = `![${fileName}](${imageUrl})`;
-        const newContent = content.substring(0, cursorPos) + imageMarkdown + content.substring(cursorPos);
-        setContent(newContent);
       }
     }
   };
@@ -336,6 +345,37 @@ export default function MarkdownEditor({
           {toolbarButtons.map((button, index) => {
             if (button.type === "separator") {
               return <Separator key={index} orientation="vertical" className="h-8" />;
+            }
+            
+            if (button.type === "dropdown") {
+              const IconComponent = button.icon!;
+              return (
+                <DropdownMenu key={index}>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      title={button.title}
+                      className="p-2"
+                      data-testid={`toolbar-${button.title?.toLowerCase()}`}
+                    >
+                      <IconComponent size={16} />
+                      <ChevronDown size={12} className="ml-1" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    {button.options?.map((option, optionIndex) => (
+                      <DropdownMenuItem
+                        key={optionIndex}
+                        onClick={option.action}
+                        className="cursor-pointer"
+                      >
+                        {option.label}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              );
             }
             
             const IconComponent = button.icon!;
