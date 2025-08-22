@@ -32,6 +32,7 @@ export default function Editor() {
   const [published, setPublished] = useState(false);
   const [activeTab, setActiveTab] = useState("write");
   const [importUrl, setImportUrl] = useState("");
+  const [featuredImage, setFeaturedImage] = useState("");
 
   // Load existing post data when editing
   const { data: existingPost, isLoading: isLoadingPost } = useQuery({
@@ -54,6 +55,7 @@ export default function Editor() {
       setExcerpt(existingPost.excerpt || "");
       setTags(existingPost.tags || []);
       setPublished(existingPost.published || false);
+      setFeaturedImage(existingPost.featuredImage || "");
     }
   }, [existingPost, isEditing]);
 
@@ -129,6 +131,7 @@ export default function Editor() {
       slug: slug.trim() || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
       content: content.trim(),
       excerpt: excerpt.trim() || undefined,
+      featuredImage: featuredImage.trim() || undefined,
       tags,
       published,
       metadata: {
@@ -193,8 +196,8 @@ export default function Editor() {
           </TabsList>
 
           <TabsContent value="write" className="space-y-6">
-            <div className="grid lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2">
+            <div className="grid lg:grid-cols-4 gap-6">
+              <div className="lg:col-span-3">
                 <MarkdownEditor
                   title={title}
                   setTitle={setTitle}
@@ -204,10 +207,12 @@ export default function Editor() {
                   setContent={setContent}
                   tags={tags}
                   setTags={setTags}
+                  featuredImage={featuredImage}
+                  setFeaturedImage={setFeaturedImage}
                   onSave={handleSave}
                   onPreview={handlePreview}
                   isSaving={savePostMutation.isPending}
-                  className="h-[calc(100vh-300px)]"
+                  className="h-[calc(100vh-200px)]"
                 />
               </div>
               

@@ -30,6 +30,8 @@ interface MarkdownEditorProps {
   setContent: (content: string) => void;
   tags: string[];
   setTags: (tags: string[]) => void;
+  featuredImage?: string;
+  setFeaturedImage?: (image: string) => void;
   onSave: () => void;
   onPreview: () => void;
   isSaving?: boolean;
@@ -45,6 +47,8 @@ export default function MarkdownEditor({
   setContent,
   tags,
   setTags,
+  featuredImage = "",
+  setFeaturedImage,
   onSave,
   onPreview,
   isSaving = false,
@@ -137,6 +141,14 @@ export default function MarkdownEditor({
     }
   };
 
+  const handleCoverImageUpload = (result: any) => {
+    if (result.successful && result.successful.length > 0 && setFeaturedImage) {
+      const uploadedFile = result.successful[0];
+      const imageUrl = uploadedFile.uploadURL;
+      setFeaturedImage(imageUrl);
+    }
+  };
+
   return (
     <div className={cn("bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full", className)}>
       <div className="border-b border-gray-200 p-4">
@@ -217,6 +229,41 @@ export default function MarkdownEditor({
               data-testid="input-tags"
             />
           </div>
+
+          {/* Cover Image */}
+          {setFeaturedImage && (
+            <div>
+              <Label htmlFor="cover-image">Cover Image</Label>
+              <div className="flex items-center space-x-3">
+                {featuredImage && (
+                  <div className="relative">
+                    <img 
+                      src={featuredImage} 
+                      alt="Cover preview" 
+                      className="w-16 h-16 object-cover rounded border"
+                    />
+                    <button
+                      onClick={() => setFeaturedImage("")}
+                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                      data-testid="remove-cover-image"
+                    >
+                      ×
+                    </button>
+                  </div>
+                )}
+                <ObjectUploader
+                  maxNumberOfFiles={1}
+                  maxFileSize={10485760}
+                  onGetUploadParameters={handleGetUploadParameters}
+                  onComplete={handleCoverImageUpload}
+                  buttonClassName="text-sm"
+                >
+                  <Upload size={16} className="mr-2" />
+                  {featuredImage ? "Change Cover" : "Upload Cover"}
+                </ObjectUploader>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -259,11 +306,24 @@ export default function MarkdownEditor({
       </div>
 
       {/* Text Editor */}
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-6">
         <Textarea
           ref={textareaRef}
-          className="w-full h-full resize-none border-0 focus:outline-none font-mono text-sm leading-relaxed"
-          placeholder="Write your post in markdown..."
+          className="w-full h-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed min-h-[500px]"
+          placeholder="Write your post in markdown...
+
+# Your Great Title
+
+Start writing your content here. You can use markdown syntax:
+
+- **Bold text**
+- *Italic text*
+- [Links](https://example.com)
+- Images via the upload button in the toolbar above
+
+## Subheading
+
+Continue writing your amazing content..."
           value={content}
           onChange={(e) => setContent(e.target.value)}
           data-testid="textarea-content"
