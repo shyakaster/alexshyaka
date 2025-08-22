@@ -194,10 +194,10 @@ export default function MarkdownEditor({
   };
 
   return (
-    <div className={cn("bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col", className)}>
-      <div className="border-b border-gray-200 p-4 flex-shrink-0">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="font-semibold text-primary">Editor</h2>
+    <div className={cn("bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full", className)}>
+      <div className="border-b border-gray-200 p-3 flex-shrink-0">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="font-semibold text-primary text-sm">Editor</h2>
           <div className="flex space-x-2">
             <Button
               variant="ghost"
@@ -219,23 +219,21 @@ export default function MarkdownEditor({
           </div>
         </div>
         
-        {/* Post Metadata */}
-        <div className="space-y-3">
+        {/* Post Metadata - Compact */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
           <div>
-            <Label htmlFor="title">Title</Label>
             <Input
               id="title"
               type="text"
               placeholder="Post Title..."
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
-              className="text-lg font-semibold"
+              className="font-semibold"
               data-testid="input-title"
             />
           </div>
           
           <div>
-            <Label htmlFor="slug">Slug (URL)</Label>
             <Input
               id="slug"
               type="text"
@@ -248,24 +246,10 @@ export default function MarkdownEditor({
           </div>
           
           <div>
-            <Label htmlFor="tags">Tags</Label>
-            <div className="flex flex-wrap gap-2 mb-2">
-              {tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  variant="secondary"
-                  className="cursor-pointer"
-                  onClick={() => removeTag(tag)}
-                  data-testid={`tag-${tag}`}
-                >
-                  {tag} ×
-                </Badge>
-              ))}
-            </div>
             <Input
               id="tags"
               type="text"
-              placeholder="Add tags (press Enter or comma to add)"
+              placeholder="Add tags (Enter/comma to add)"
               value={tagInput}
               onChange={(e) => setTagInput(e.target.value)}
               onKeyDown={handleTagInputKeyDown}
@@ -273,47 +257,61 @@ export default function MarkdownEditor({
               data-testid="input-tags"
             />
           </div>
-
-          {/* Cover Image */}
-          {setFeaturedImage && (
-            <div>
-              <Label htmlFor="cover-image">Cover Image</Label>
-              <div className="flex items-center space-x-3">
-                {featuredImage && (
-                  <div className="relative">
-                    <img 
-                      src={featuredImage} 
-                      alt="Cover preview" 
-                      className="w-16 h-16 object-cover rounded border"
-                    />
-                    <button
-                      onClick={() => setFeaturedImage("")}
-                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
-                      data-testid="remove-cover-image"
-                    >
-                      ×
-                    </button>
-                  </div>
-                )}
-                <ObjectUploader
-                  maxNumberOfFiles={1}
-                  maxFileSize={10485760}
-                  onGetUploadParameters={handleGetUploadParameters}
-                  onComplete={handleCoverImageUpload}
-                  buttonClassName="text-sm"
-                >
-                  <Upload size={16} className="mr-2" />
-                  {featuredImage ? "Change Cover" : "Upload Cover"}
-                </ObjectUploader>
-              </div>
-            </div>
-          )}
         </div>
+
+        {/* Tags Display */}
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-2">
+            {tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="cursor-pointer text-xs"
+                onClick={() => removeTag(tag)}
+                data-testid={`tag-${tag}`}
+              >
+                {tag} ×
+              </Badge>
+            ))}
+          </div>
+        )}
+
+        {/* Cover Image - Compact */}
+        {setFeaturedImage && (
+          <div className="flex items-center space-x-3 mt-2">
+            {featuredImage && (
+              <div className="relative">
+                <img 
+                  src={featuredImage} 
+                  alt="Cover preview" 
+                  className="w-12 h-12 object-cover rounded border"
+                />
+                <button
+                  onClick={() => setFeaturedImage("")}
+                  className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs"
+                  data-testid="remove-cover-image"
+                >
+                  ×
+                </button>
+              </div>
+            )}
+            <ObjectUploader
+              maxNumberOfFiles={1}
+              maxFileSize={10485760}
+              onGetUploadParameters={handleGetUploadParameters}
+              onComplete={handleCoverImageUpload}
+              buttonClassName="text-xs px-2 py-1"
+            >
+              <Upload size={14} className="mr-1" />
+              {featuredImage ? "Change" : "Cover"}
+            </ObjectUploader>
+          </div>
+        )}
       </div>
 
       {/* Toolbar */}
-      <div className="border-b border-gray-200 p-4 flex-shrink-0">
-        <div className="flex flex-wrap gap-2">
+      <div className="border-b border-gray-200 p-2 flex-shrink-0">
+        <div className="flex flex-wrap gap-1">
           {toolbarButtons.map((button, index) => {
             if (button.type === "separator") {
               return <Separator key={index} orientation="vertical" className="h-8" />;
@@ -349,13 +347,17 @@ export default function MarkdownEditor({
         </div>
       </div>
 
-      {/* Text Editor */}
+      {/* Text Editor - MUCH LARGER */}
       <div className="flex-1 overflow-hidden">
-        <div className="h-full p-6">
+        <div className="h-full p-4">
           <Textarea
             ref={textareaRef}
-            className="w-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed"
-            style={{ height: 'calc(100vh - 400px)', minHeight: '400px' }}
+            className="w-full h-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed"
+            style={{ 
+              height: '100%',
+              minHeight: 'calc(100vh - 250px)',
+              maxHeight: 'none'
+            }}
             placeholder="Write your post in markdown...
 
 # Your Great Title
@@ -363,13 +365,15 @@ export default function MarkdownEditor({
 Start writing your content here. You can use markdown syntax:
 
 - **Bold text**
-- *Italic text*
+- *Italic text*  
 - [Links](https://example.com)
 - Click the upload button (📤) in the toolbar to add images
 
 ## Subheading
 
-Continue writing your amazing content..."
+Continue writing your amazing content...
+
+You now have a MUCH larger writing area! The text area will expand to use almost the entire screen height, giving you plenty of space to see and edit your entire blog post comfortably."
             value={content}
             onChange={(e) => setContent(e.target.value)}
             data-testid="textarea-content"

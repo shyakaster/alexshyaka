@@ -195,9 +195,9 @@ export default function Editor() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="write" className="space-y-6">
-            <div className="grid lg:grid-cols-4 gap-6">
-              <div className="lg:col-span-3">
+          <TabsContent value="write" className="space-y-4">
+            <div className="grid lg:grid-cols-5 gap-4">
+              <div className="lg:col-span-4">
                 <MarkdownEditor
                   title={title}
                   setTitle={setTitle}
@@ -212,7 +212,7 @@ export default function Editor() {
                   onSave={handleSave}
                   onPreview={handlePreview}
                   isSaving={savePostMutation.isPending}
-                  className="h-[calc(100vh-200px)]"
+                  className="h-[calc(100vh-150px)]"
                 />
               </div>
               
