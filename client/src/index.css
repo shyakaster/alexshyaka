@@ -218,3 +218,34 @@
   font-style: italic;
   font-size: 1.125rem;
 }
+
+/* Custom list bullet styles */
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-star {
+  list-style: none;
+}
+
+.list-star li::before {
+  content: "★ ";
+  color: #3b82f6;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.list-plus {
+  list-style: none;
+}
+
+.list-plus li::before {
+  content: "+ ";
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.list-alpha {
+  list-style-type: lower-alpha;
+}

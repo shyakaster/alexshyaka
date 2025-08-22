@@ -261,11 +261,25 @@ export default function BlogPostPage() {
                   </div>
                 );
               },
-              ul: (props: any) => <ul className="space-y-3 text-secondary mb-6">{props.children}</ul>,
+              ul: (props: any) => {
+                // Get the raw markdown to detect bullet type
+                const rawText = post?.content || '';
+                const listMatch = rawText.match(/^(\s*)([-\*\+]|\d+\.|\w+\))/m);
+                const bulletType = listMatch ? listMatch[2] : '-';
+                
+                let bulletClass = '';
+                if (bulletType === '-') bulletClass = 'list-disc';
+                else if (bulletType === '*') bulletClass = 'list-star';
+                else if (bulletType === '+') bulletClass = 'list-plus';
+                else if (/\d+\./.test(bulletType)) bulletClass = 'list-decimal';
+                else if (/\w+\)/.test(bulletType)) bulletClass = 'list-alpha';
+                
+                return <ul className={`space-y-3 text-secondary mb-6 ${bulletClass} ml-6`}>{props.children}</ul>;
+              },
+              ol: (props: any) => <ol className="space-y-3 text-secondary mb-6 list-decimal ml-6">{props.children}</ol>,
               li: (props: any) => (
-                <li className="flex items-start space-x-3">
-                  <i className="fas fa-check-circle text-accent mt-1 flex-shrink-0"></i>
-                  <span>{props.children}</span>
+                <li className="text-secondary leading-relaxed">
+                  {props.children}
                 </li>
               ),
               a: (props: any) => {

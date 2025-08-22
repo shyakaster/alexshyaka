@@ -366,6 +366,26 @@ export default function Editor() {
                             </div>
                           );
                         },
+                        ul: (props: any) => {
+                          // Detect bullet type from content
+                          const rawText = content || '';
+                          const listMatch = rawText.match(/^(\s*)([-\*\+]|\d+\.|\w+\))/m);
+                          const bulletType = listMatch ? listMatch[2] : '-';
+                          
+                          let bulletClass = '';
+                          if (bulletType === '-') bulletClass = 'list-disc';
+                          else if (bulletType === '*') bulletClass = 'list-star';
+                          else if (bulletType === '+') bulletClass = 'list-plus';
+                          else bulletClass = 'list-disc';
+                          
+                          return <ul className={`space-y-3 text-secondary mb-6 ${bulletClass} ml-6`}>{props.children}</ul>;
+                        },
+                        ol: (props: any) => <ol className="space-y-3 text-secondary mb-6 list-decimal ml-6">{props.children}</ol>,
+                        li: (props: any) => (
+                          <li className="text-secondary leading-relaxed">
+                            {props.children}
+                          </li>
+                        ),
                       }}
                     >
                       {content || "*Start writing to see preview...*"}
