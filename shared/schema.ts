@@ -47,6 +47,7 @@ export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
   updatedAt: true,
 }).extend({
   tags: z.array(z.string()).optional(),
+  slug: z.string().optional(), // Make slug optional for auto-generation
 });
 
 export const insertCommentSchema = createInsertSchema(comments).omit({

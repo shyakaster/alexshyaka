@@ -298,6 +298,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/blog-posts", async (req, res) => {
     try {
       const validatedData = insertBlogPostSchema.parse(req.body);
+      
+      // Auto-generate slug from title if not provided
+      if (!validatedData.slug && validatedData.title) {
+        validatedData.slug = validatedData.title
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+          .replace(/\s+/g, '-') // Replace spaces with hyphens
+          .replace(/-+/g, '-') // Replace multiple hyphens with single
+          .trim();
+      }
+      
       const post = await storage.createBlogPost(validatedData);
       res.status(201).json(post);
     } catch (error) {
