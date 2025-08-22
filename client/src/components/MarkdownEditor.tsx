@@ -129,11 +129,11 @@ export default function MarkdownEditor({
       icon: List, 
       title: "Lists",
       options: [
-        { label: "• Bullet List", action: () => insertMarkdown("- ", "", "list item") },
-        { label: "* Bullet List", action: () => insertMarkdown("* ", "", "list item") },
-        { label: "+ Bullet List", action: () => insertMarkdown("+ ", "", "list item") },
-        { label: "1. Numbered List", action: () => insertMarkdown("1. ", "", "list item") },
-        { label: "a) Letter List", action: () => insertMarkdown("a) ", "", "list item") },
+        { label: "• Bullet List (-)", action: () => insertMarkdown("- ", "", "") },
+        { label: "* Bullet List (*)", action: () => insertMarkdown("* ", "", "") },
+        { label: "+ Bullet List (+)", action: () => insertMarkdown("+ ", "", "") },
+        { label: "1. Numbered List", action: () => insertMarkdown("1. ", "", "") },
+        { label: "a) Letter List", action: () => insertMarkdown("a) ", "", "") },
       ]
     },
   ];
