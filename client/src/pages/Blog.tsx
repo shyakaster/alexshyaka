@@ -3,22 +3,18 @@ import { useQuery } from "@tanstack/react-query";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, ChevronLeft, ChevronRight, Edit, Shield, Plus } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Edit, Plus } from "lucide-react";
 import BlogPostCard from "@/components/BlogPostCard";
 import { BlogPost } from "@shared/schema";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
   const [currentPage, setCurrentPage] = useState(1);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [showAdminLogin, setShowAdminLogin] = useState(false);
-  const [adminPassword, setAdminPassword] = useState("");
   const postsPerPage = 6;
-  const { toast } = useToast();
 
   // Check admin status (same key as AdminAuth component)
   useEffect(() => {
@@ -99,55 +95,6 @@ export default function Blog() {
     setSearchQuery(""); // Clear search when filtering by category
   };
 
-  const handleAdminLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      const response = await fetch('/api/admin/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ password: adminPassword }),
-      });
-
-      if (response.ok) {
-        localStorage.setItem('blog-admin-auth', 'true');
-        localStorage.setItem('blog-admin-auth-time', new Date().getTime().toString());
-        setIsAdmin(true);
-        setShowAdminLogin(false);
-        setAdminPassword("");
-        toast({
-          title: "Admin access granted",
-          description: "You can now edit blog posts and create new content.",
-        });
-      } else {
-        toast({
-          title: "Access denied",
-          description: "Invalid admin password. Please try again.",
-          variant: "destructive",
-        });
-        setAdminPassword("");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to verify password. Please try again.",
-        variant: "destructive",
-      });
-      setAdminPassword("");
-    }
-  };
-
-  const handleAdminLogout = () => {
-    localStorage.removeItem('blog-admin-auth');
-    localStorage.removeItem('blog-admin-auth-time');
-    setIsAdmin(false);
-    toast({
-      title: "Logged out",
-      description: "You have been logged out from admin mode.",
-    });
-  };
 
   if (isLoading) {
     return (
@@ -170,62 +117,6 @@ export default function Blog() {
         type="website"
       />
       <div className="max-w-6xl mx-auto px-6 py-16">
-        {/* Admin Controls */}
-        <div className="flex justify-end mb-4">
-          {isAdmin ? (
-            <div className="flex items-center space-x-4">
-              <Link href="/write">
-                <Button variant="outline" size="sm" data-testid="admin-create-post">
-                  <Plus size={16} className="mr-2" />
-                  New Post
-                </Button>
-              </Link>
-              <Button variant="outline" size="sm" onClick={handleAdminLogout} data-testid="admin-logout">
-                Logout Admin
-              </Button>
-            </div>
-          ) : (
-            <Button variant="outline" size="sm" onClick={() => setShowAdminLogin(true)} data-testid="admin-login-trigger">
-              <Shield size={16} className="mr-2" />
-              Admin Login
-            </Button>
-          )}
-        </div>
-
-        {/* Admin Login Modal */}
-        {showAdminLogin && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
-              <h3 className="text-lg font-semibold mb-4">Admin Login</h3>
-              <form onSubmit={handleAdminLogin}>
-                <Input
-                  type="password"
-                  placeholder="Admin password"
-                  value={adminPassword}
-                  onChange={(e) => setAdminPassword(e.target.value)}
-                  className="mb-4"
-                  data-testid="admin-password-modal"
-                />
-                <div className="flex space-x-3">
-                  <Button type="submit" className="flex-1" data-testid="admin-login-submit">
-                    Login
-                  </Button>
-                  <Button 
-                    type="button" 
-                    variant="outline" 
-                    onClick={() => {
-                      setShowAdminLogin(false);
-                      setAdminPassword("");
-                    }}
-                    data-testid="admin-login-cancel"
-                  >
-                    Cancel
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
 
         {/* Blog Header */}
         <div className="text-center space-y-6 mb-16">
