@@ -18,6 +18,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPostPage} />
       <Route path="/write" component={Editor} />
+      <Route path="/edit/:id" component={Editor} />
       <Route component={NotFound} />
     </Switch>
   );

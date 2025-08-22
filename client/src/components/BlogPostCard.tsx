@@ -2,16 +2,17 @@ import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Bookmark } from "lucide-react";
+import { Bookmark, Edit } from "lucide-react";
 import { BlogPost } from "@shared/schema";
 import { getResolvedImagePath, alexAuthorImage } from "@/pages/Portfolio";
 
 interface BlogPostCardProps {
   post: BlogPost;
   onBookmark?: (postId: string) => void;
+  showEditButton?: boolean;
 }
 
-export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
+export default function BlogPostCard({ post, onBookmark, showEditButton = false }: BlogPostCardProps) {
   const formatDate = (date: Date | string) => {
     return new Date(date).toLocaleDateString("en-US", {
       year: "numeric",
@@ -144,20 +145,34 @@ export default function BlogPostCard({ post, onBookmark }: BlogPostCardProps) {
             </span>
           </div>
           
-          {onBookmark && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={(e) => {
-                e.preventDefault();
-                onBookmark(post.id);
-              }}
-              className="text-secondary hover:text-accent"
-              data-testid={`button-bookmark-${post.id}`}
-            >
-              <Bookmark size={16} />
-            </Button>
-          )}
+          <div className="flex items-center space-x-2">
+            {showEditButton && (
+              <Link href={`/edit/${post.id}`}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-secondary hover:text-accent hover:bg-accent/10"
+                  data-testid={`edit-button-${post.id}`}
+                >
+                  <Edit size={16} />
+                </Button>
+              </Link>
+            )}
+            {onBookmark && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onBookmark(post.id);
+                }}
+                className="text-secondary hover:text-accent"
+                data-testid={`button-bookmark-${post.id}`}
+              >
+                <Bookmark size={16} />
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </article>

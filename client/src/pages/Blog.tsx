@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Edit } from "lucide-react";
 import BlogPostCard from "@/components/BlogPostCard";
 import { BlogPost } from "@shared/schema";
 import SEO from "@/components/SEO";
@@ -12,7 +12,14 @@ export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isAdmin, setIsAdmin] = useState(false);
   const postsPerPage = 6;
+
+  // Check admin status
+  useEffect(() => {
+    const adminStatus = localStorage.getItem('isAdminAuthenticated');
+    setIsAdmin(adminStatus === 'true');
+  }, []);
 
   const categories = ["All Posts", "African Youth Empowerment", "Educational Innovation", "Future Leaders", "Digital Literacy", "Youth Leadership", "Technology Creation"];
 
@@ -145,6 +152,7 @@ export default function Blog() {
                   key={post.id} 
                   post={post} 
                   onBookmark={handleBookmark}
+                  showEditButton={isAdmin}
                 />
               ))}
             </div>

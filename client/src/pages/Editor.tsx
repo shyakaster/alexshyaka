@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useLocation } from "wouter";
+import { useState, useEffect } from "react";
+import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
+import { useLocation, useParams } from "wouter";
 import ReactMarkdown from "react-markdown";
 import MarkdownEditor from "@/components/MarkdownEditor";
 import AdminAuth from "@/components/AdminAuth";
@@ -18,6 +18,9 @@ import { FileText, Eye, Settings, Upload } from "lucide-react";
 
 export default function Editor() {
   const [, setLocation] = useLocation();
+  const params = useParams();
+  const editingId = params.id; // Get the post ID from URL if editing
+  const isEditing = !!editingId;
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -30,16 +33,44 @@ export default function Editor() {
   const [activeTab, setActiveTab] = useState("write");
   const [importUrl, setImportUrl] = useState("");
 
-  const createPostMutation = useMutation({
+  // Load existing post data when editing
+  const { data: existingPost, isLoading: isLoadingPost } = useQuery({
+    queryKey: ["/api/blog-posts", editingId],
+    queryFn: async () => {
+      if (!editingId) return null;
+      const response = await fetch(`/api/blog-posts/${editingId}`);
+      if (!response.ok) throw new Error('Failed to load post');
+      return response.json();
+    },
+    enabled: isEditing,
+  });
+
+  // Set form data when loading existing post
+  useEffect(() => {
+    if (existingPost && isEditing) {
+      setTitle(existingPost.title || "");
+      setSlug(existingPost.slug || "");
+      setContent(existingPost.content || "");
+      setExcerpt(existingPost.excerpt || "");
+      setTags(existingPost.tags || []);
+      setPublished(existingPost.published || false);
+    }
+  }, [existingPost, isEditing]);
+
+  const savePostMutation = useMutation({
     mutationFn: async (postData: any) => {
       const validatedData = insertBlogPostSchema.parse(postData);
-      return apiRequest("POST", "/api/blog-posts", validatedData);
+      if (isEditing) {
+        return apiRequest("PUT", `/api/blog-posts/${editingId}`, validatedData);
+      } else {
+        return apiRequest("POST", "/api/blog-posts", validatedData);
+      }
     },
     onSuccess: async (response) => {
       const post = await response.json();
       queryClient.invalidateQueries({ queryKey: ["/api/blog-posts"] });
       toast({
-        title: "Post saved!",
+        title: isEditing ? "Post updated!" : "Post saved!",
         description: `Your post "${post.title}" has been ${published ? "published" : "saved as draft"}.`,
       });
       if (published) {
@@ -48,8 +79,8 @@ export default function Editor() {
     },
     onError: (error: any) => {
       toast({
-        title: "Failed to save post",
-        description: error.message || "There was an error saving your post.",
+        title: isEditing ? "Failed to update post" : "Failed to save post",
+        description: error.message || `There was an error ${isEditing ? "updating" : "saving"} your post.`,
         variant: "destructive",
       });
     },
@@ -106,7 +137,7 @@ export default function Editor() {
       }
     };
 
-    createPostMutation.mutate(postData);
+    savePostMutation.mutate(postData);
   };
 
   const handlePreview = () => {
@@ -138,9 +169,11 @@ export default function Editor() {
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-primary mb-2" data-testid="editor-title">
-            Write New Post
+            {isEditing ? "Edit Post" : "Write New Post"}
           </h1>
-          <p className="text-secondary">Create and publish your technical content with our markdown editor.</p>
+          <p className="text-secondary">
+            {isEditing ? "Update your existing post with our markdown editor." : "Create and publish your technical content with our markdown editor."}
+          </p>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
@@ -173,7 +206,7 @@ export default function Editor() {
                   setTags={setTags}
                   onSave={handleSave}
                   onPreview={handlePreview}
-                  isSaving={createPostMutation.isPending}
+                  isSaving={savePostMutation.isPending}
                   className="h-[calc(100vh-300px)]"
                 />
               </div>
@@ -197,11 +230,11 @@ export default function Editor() {
                     
                     <Button 
                       onClick={handleSave} 
-                      disabled={createPostMutation.isPending}
+                      disabled={savePostMutation.isPending}
                       className="w-full"
                       data-testid="button-save-post"
                     >
-                      {createPostMutation.isPending 
+                      {savePostMutation.isPending 
                         ? "Saving..." 
                         : published 
                           ? "Publish Post" 
