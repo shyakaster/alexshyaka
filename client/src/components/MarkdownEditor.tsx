@@ -132,26 +132,70 @@ export default function MarkdownEditor({
     };
   };
 
-  const handleUploadComplete = (result: any) => {
+  const handleUploadComplete = async (result: any) => {
     if (result.successful && result.successful.length > 0) {
       const uploadedFile = result.successful[0];
       const imageUrl = uploadedFile.uploadURL;
       const fileName = uploadedFile.name || "image";
-      insertMarkdown(`![${fileName}](${imageUrl})`, "", "");
+      
+      // Convert GCS URL to our object endpoint
+      try {
+        const response = await fetch("/api/objects/upload", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ bannerImageURL: imageUrl }),
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          const objectPath = data.objectPath || imageUrl;
+          insertMarkdown(`![${fileName}](${objectPath})`, "", "");
+        } else {
+          // Fallback to direct URL
+          insertMarkdown(`![${fileName}](${imageUrl})`, "", "");
+        }
+      } catch (error) {
+        console.error("Error processing image:", error);
+        insertMarkdown(`![${fileName}](${imageUrl})`, "", "");
+      }
     }
   };
 
-  const handleCoverImageUpload = (result: any) => {
+  const handleCoverImageUpload = async (result: any) => {
     if (result.successful && result.successful.length > 0 && setFeaturedImage) {
       const uploadedFile = result.successful[0];
       const imageUrl = uploadedFile.uploadURL;
-      setFeaturedImage(imageUrl);
+      
+      // Convert GCS URL to our object endpoint
+      try {
+        const response = await fetch("/api/objects/upload", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ bannerImageURL: imageUrl }),
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          const objectPath = data.objectPath || imageUrl;
+          setFeaturedImage(objectPath);
+        } else {
+          // Fallback to direct URL
+          setFeaturedImage(imageUrl);
+        }
+      } catch (error) {
+        console.error("Error processing cover image:", error);
+        setFeaturedImage(imageUrl);
+      }
     }
   };
 
   return (
-    <div className={cn("bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-full", className)}>
-      <div className="border-b border-gray-200 p-4">
+    <div className={cn("bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col", className)}>
+      <div className="border-b border-gray-200 p-4 flex-shrink-0">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-semibold text-primary">Editor</h2>
           <div className="flex space-x-2">
@@ -268,7 +312,7 @@ export default function MarkdownEditor({
       </div>
 
       {/* Toolbar */}
-      <div className="border-b border-gray-200 p-4">
+      <div className="border-b border-gray-200 p-4 flex-shrink-0">
         <div className="flex flex-wrap gap-2">
           {toolbarButtons.map((button, index) => {
             if (button.type === "separator") {
@@ -306,11 +350,13 @@ export default function MarkdownEditor({
       </div>
 
       {/* Text Editor */}
-      <div className="flex-1 p-6">
-        <Textarea
-          ref={textareaRef}
-          className="w-full h-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed min-h-[500px]"
-          placeholder="Write your post in markdown...
+      <div className="flex-1 overflow-hidden">
+        <div className="h-full p-6">
+          <Textarea
+            ref={textareaRef}
+            className="w-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed"
+            style={{ height: 'calc(100vh - 400px)', minHeight: '400px' }}
+            placeholder="Write your post in markdown...
 
 # Your Great Title
 
@@ -319,15 +365,16 @@ Start writing your content here. You can use markdown syntax:
 - **Bold text**
 - *Italic text*
 - [Links](https://example.com)
-- Images via the upload button in the toolbar above
+- Click the upload button (📤) in the toolbar to add images
 
 ## Subheading
 
 Continue writing your amazing content..."
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          data-testid="textarea-content"
-        />
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            data-testid="textarea-content"
+          />
+        </div>
       </div>
     </div>
   );

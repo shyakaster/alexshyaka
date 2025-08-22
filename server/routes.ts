@@ -245,6 +245,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({ uploadURL });
   });
 
+  // This endpoint processes uploaded image URLs and returns normalized paths
+  app.put("/api/objects/upload", async (req, res) => {
+    if (!req.body.bannerImageURL) {
+      return res.status(400).json({ error: "bannerImageURL is required" });
+    }
+
+    try {
+      const objectStorageService = new ObjectStorageService();
+      const objectPath = objectStorageService.normalizeObjectEntityPath(
+        req.body.bannerImageURL,
+      );
+
+      res.status(200).json({
+        objectPath: objectPath,
+      });
+    } catch (error) {
+      console.error("Error processing uploaded image:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
   // Blog Posts API
   app.get("/api/blog-posts", async (req, res) => {
     try {
