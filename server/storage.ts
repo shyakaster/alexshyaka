@@ -394,10 +394,10 @@ export class DatabaseStorage implements IStorage {
       const existingPosts = await db.select().from(blogPosts).limit(1);
       if (existingPosts.length > 0) return; // Data already seeded
 
-      // Seed the same data as MemStorage
+      // Seed the same data as MemStorage with proper UUIDs
       const realPosts = [
         {
-          id: "1",
+          id: "f47ac10b-58cc-4372-a567-0e02b2c3d479",
           title: "Building Market-Ready Tech Skills for African Graduates",
           slug: "building-market-ready-tech-skills-african-graduates",
           content: `# Building Market-Ready Tech Skills for African Graduates
@@ -446,7 +446,7 @@ This community serves as more than a professional network—it's an ecosystem wh
           }
         },
         {
-          id: "2",
+          id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
           title: "Our Learning Journey: Building Future Tech Leaders",
           slug: "our-learning-journey-building-future-tech-leaders",
           content: `# Our Learning Journey: Building Future Tech Leaders
@@ -499,7 +499,7 @@ Each graduate represents not just a success story, but a catalyst for exponentia
           }
         },
         {
-          id: "3",
+          id: "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
           title: "How the Attention Economy is Affecting Teens (Part One)",
           slug: "attention-economy-affecting-teens-part-one",
           content: `# How the Attention Economy is Affecting Teens (Part One)
@@ -549,7 +549,7 @@ This foundation becomes essential as they enter professional environments where 
           }
         },
         {
-          id: "4", 
+          id: "6ba7b812-9dad-11d1-80b4-00c04fd430c8", 
           title: "Building a Technology Community in Uganda with Global Practitioners",
           slug: "building-technology-community-uganda-global-practitioners",
           content: `# Building a Technology Community in Uganda with Global Practitioners
@@ -615,12 +615,12 @@ This reciprocal relationship ensures that Uganda becomes not just a recipient of
         await db.insert(blogPosts).values({
           ...post,
           metadata: post.metadata as any,
-          createdAt: new Date(post.id === "1" ? "2024-01-15" : 
-                                post.id === "2" ? "2021-09-11" :
-                                post.id === "3" ? "2021-02-20" : "2020-12-02"),
-          updatedAt: new Date(post.id === "1" ? "2024-01-15" : 
-                                post.id === "2" ? "2021-09-11" :
-                                post.id === "3" ? "2021-02-20" : "2020-12-02")
+          createdAt: new Date(post.id === "f47ac10b-58cc-4372-a567-0e02b2c3d479" ? "2024-01-15" : 
+                                post.id === "6ba7b810-9dad-11d1-80b4-00c04fd430c8" ? "2021-09-11" :
+                                post.id === "6ba7b811-9dad-11d1-80b4-00c04fd430c8" ? "2021-02-20" : "2020-12-02"),
+          updatedAt: new Date(post.id === "f47ac10b-58cc-4372-a567-0e02b2c3d479" ? "2024-01-15" : 
+                                post.id === "6ba7b810-9dad-11d1-80b4-00c04fd430c8" ? "2021-09-11" :
+                                post.id === "6ba7b811-9dad-11d1-80b4-00c04fd430c8" ? "2021-02-20" : "2020-12-02")
         });
       }
       
