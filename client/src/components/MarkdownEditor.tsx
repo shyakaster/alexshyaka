@@ -102,7 +102,7 @@ export default function MarkdownEditor({
     // Focus and set cursor position
     setTimeout(() => {
       textarea.focus();
-      const newCursorPos = start + prefix.length + replacement.length;
+      const newCursorPos = start + prefix.length + replacement.length + suffix.length;
       textarea.setSelectionRange(newCursorPos, newCursorPos);
     }, 0);
   };
@@ -136,7 +136,11 @@ export default function MarkdownEditor({
     if (result.successful && result.successful.length > 0) {
       const uploadedFile = result.successful[0];
       const imageUrl = uploadedFile.uploadURL;
-      const fileName = uploadedFile.name || "image";
+      const fileName = uploadedFile.name?.replace(/\.[^/.]+$/, "") || "image";
+      
+      // Store current cursor position before async operation
+      const textarea = textareaRef.current;
+      const cursorPos = textarea ? textarea.selectionStart : content.length;
       
       // Convert GCS URL to our object endpoint
       try {
@@ -151,14 +155,31 @@ export default function MarkdownEditor({
         if (response.ok) {
           const data = await response.json();
           const objectPath = data.objectPath || imageUrl;
-          insertMarkdown(`![${fileName}](${objectPath})`, "", "");
+          const imageMarkdown = `![${fileName}](${objectPath})`;
+          
+          // Insert at stored cursor position
+          const newContent = content.substring(0, cursorPos) + imageMarkdown + content.substring(cursorPos);
+          setContent(newContent);
+          
+          // Set cursor after the inserted image
+          setTimeout(() => {
+            if (textarea) {
+              textarea.focus();
+              const newPos = cursorPos + imageMarkdown.length;
+              textarea.setSelectionRange(newPos, newPos);
+            }
+          }, 0);
         } else {
           // Fallback to direct URL
-          insertMarkdown(`![${fileName}](${imageUrl})`, "", "");
+          const imageMarkdown = `![${fileName}](${imageUrl})`;
+          const newContent = content.substring(0, cursorPos) + imageMarkdown + content.substring(cursorPos);
+          setContent(newContent);
         }
       } catch (error) {
         console.error("Error processing image:", error);
-        insertMarkdown(`![${fileName}](${imageUrl})`, "", "");
+        const imageMarkdown = `![${fileName}](${imageUrl})`;
+        const newContent = content.substring(0, cursorPos) + imageMarkdown + content.substring(cursorPos);
+        setContent(newContent);
       }
     }
   };
@@ -347,16 +368,15 @@ export default function MarkdownEditor({
         </div>
       </div>
 
-      {/* Text Editor - MUCH LARGER */}
-      <div className="flex-1 overflow-hidden">
-        <div className="h-full p-4">
+      {/* Text Editor - MUCH LARGER WITH SCROLLING */}
+      <div className="flex-1 flex flex-col min-h-0">
+        <div className="flex-1 p-4 overflow-hidden">
           <Textarea
             ref={textareaRef}
-            className="w-full h-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed"
+            className="w-full h-full resize-none border-0 focus:outline-none font-mono text-base leading-relaxed overflow-y-auto"
             style={{ 
               height: '100%',
-              minHeight: 'calc(100vh - 250px)',
-              maxHeight: 'none'
+              minHeight: '100%'
             }}
             placeholder="Write your post in markdown...
 
@@ -373,7 +393,7 @@ Start writing your content here. You can use markdown syntax:
 
 Continue writing your amazing content...
 
-You now have a MUCH larger writing area! The text area will expand to use almost the entire screen height, giving you plenty of space to see and edit your entire blog post comfortably."
+You now have a MUCH larger writing area with proper scrolling! You can scroll to see your entire blog post and the text won't be wiped when adding images."
             value={content}
             onChange={(e) => setContent(e.target.value)}
             data-testid="textarea-content"

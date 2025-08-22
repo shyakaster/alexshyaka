@@ -212,7 +212,7 @@ export default function Editor() {
                   onSave={handleSave}
                   onPreview={handlePreview}
                   isSaving={savePostMutation.isPending}
-                  className="h-[calc(100vh-150px)]"
+                  className="h-[calc(100vh-120px)]"
                 />
               </div>
               
