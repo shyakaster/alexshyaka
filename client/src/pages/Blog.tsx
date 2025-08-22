@@ -14,6 +14,7 @@ export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
   const [currentPage, setCurrentPage] = useState(1);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [showDrafts, setShowDrafts] = useState(false);
   const postsPerPage = 6;
 
   // Check admin status (same key as AdminAuth component)
@@ -49,11 +50,20 @@ export default function Blog() {
   const categories = ["All Posts", "African Youth Empowerment", "Educational Innovation", "Future Leaders", "Digital Literacy", "Youth Leadership", "Technology Creation"];
 
   const { data: allPosts = [], isLoading } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog-posts", { published: true }],
+    queryKey: ["/api/blog-posts", { published: !showDrafts }],
     queryFn: async () => {
-      const response = await fetch("/api/blog-posts?published=true");
+      const response = await fetch(`/api/blog-posts?published=${!showDrafts}`);
       return response.json();
     },
+  });
+
+  const { data: draftPosts = [] } = useQuery<BlogPost[]>({
+    queryKey: ["/api/blog-posts", { published: false }],
+    queryFn: async () => {
+      const response = await fetch("/api/blog-posts?published=false");
+      return response.json();
+    },
+    enabled: isAdmin,
   });
 
   const { data: searchResults = [] } = useQuery<BlogPost[]>({
@@ -66,11 +76,12 @@ export default function Blog() {
     enabled: searchQuery.trim().length > 0,
   });
 
+  const postsToShow = showDrafts ? draftPosts : allPosts;
   const filteredPosts = searchQuery.trim() 
     ? searchResults 
     : selectedCategory === "All Posts" 
-      ? allPosts 
-      : allPosts.filter(post => 
+      ? postsToShow 
+      : postsToShow.filter(post => 
           (post.tags || []).some(tag => tag.toLowerCase() === selectedCategory.toLowerCase())
         );
 
@@ -118,29 +129,55 @@ export default function Blog() {
       />
       <div className="max-w-6xl mx-auto px-6 py-16">
 
+        {/* Admin Controls */}
+        {isAdmin && (
+          <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center space-x-4">
+              <Button 
+                variant={showDrafts ? "default" : "outline"}
+                onClick={() => setShowDrafts(!showDrafts)}
+                data-testid="toggle-drafts"
+              >
+                {showDrafts ? `Published Posts (${allPosts.length})` : `Drafts (${draftPosts.length})`}
+              </Button>
+            </div>
+            <Link href="/write">
+              <Button variant="default" data-testid="admin-new-post">
+                <Plus size={16} className="mr-2" />
+                New Post
+              </Button>
+            </Link>
+          </div>
+        )}
+
         {/* Blog Header */}
         <div className="text-center space-y-6 mb-16">
           <h1 className="text-5xl font-bold text-primary" data-testid="blog-title">
-            EdTech Dialogue
+            {showDrafts ? "Draft Articles" : "EdTech Dialogue"}
           </h1>
           <p className="text-xl text-secondary max-w-2xl mx-auto" data-testid="blog-description">
-            Exploring educational technology innovations, youth empowerment strategies, and transformative learning experiences across Africa's dynamic tech landscape.
+            {showDrafts 
+              ? "Unpublished articles and work-in-progress content. These are only visible to admin users."
+              : "Exploring educational technology innovations, youth empowerment strategies, and transformative learning experiences across Africa's dynamic tech landscape."
+            }
           </p>
           
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => handleCategoryChange(category)}
-                className={selectedCategory === category ? "bg-accent text-white hover:bg-blue-600" : ""}
-                data-testid={`category-${category.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
+          {/* Category Filters - Only show for published posts */}
+          {!showDrafts && (
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => handleCategoryChange(category)}
+                  className={selectedCategory === category ? "bg-accent text-white hover:bg-blue-600" : ""}
+                  data-testid={`category-${category.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Search Bar */}
@@ -159,12 +196,14 @@ export default function Blog() {
         </div>
 
         {/* Results Summary */}
-        {(searchQuery.trim() || selectedCategory !== "All Posts") && (
+        {(searchQuery.trim() || selectedCategory !== "All Posts" || showDrafts) && (
           <div className="mb-8">
             <p className="text-secondary" data-testid="results-summary">
-              {searchQuery.trim() 
-                ? `Found ${filteredPosts.length} results for "${searchQuery}"`
-                : `Showing ${filteredPosts.length} posts in "${selectedCategory}"`
+              {showDrafts 
+                ? `Showing ${filteredPosts.length} draft${filteredPosts.length === 1 ? '' : 's'}`
+                : searchQuery.trim() 
+                  ? `Found ${filteredPosts.length} results for "${searchQuery}"`
+                  : `Showing ${filteredPosts.length} posts in "${selectedCategory}"`
               }
             </p>
           </div>
