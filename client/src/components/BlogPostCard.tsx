@@ -100,7 +100,7 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
       </Link>
       
       <div className="p-6 space-y-4">
-        <div className="flex items-center space-x-2 text-sm text-secondary">
+        <div className="flex items-center space-x-2 text-sm text-secondary min-h-[20px]">
           <span data-testid={`blog-date-${post.id}`}>
             {formatDate(post.createdAt)}
           </span>
@@ -108,14 +108,10 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
           <span data-testid={`blog-readtime-${post.id}`}>
             {post.metadata?.readTime || 5} min read
           </span>
-          {post.metadata?.views && (
-            <>
-              <span>•</span>
-              <span data-testid={`blog-views-${post.id}`}>
-                {post.metadata.views} views
-              </span>
-            </>
-          )}
+          <span>•</span>
+          <span data-testid={`blog-views-${post.id}`}>
+            {post.metadata?.views || 0} views
+          </span>
         </div>
         
         <Link href={`/blog/${post.slug}`}>
