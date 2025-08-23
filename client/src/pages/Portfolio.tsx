@@ -464,17 +464,22 @@ export default function Portfolio() {
                   </div>
                 </Link>
                 <div className="p-6 space-y-4">
-                  <div className="flex items-center space-x-2 text-sm text-secondary">
-                    <span data-testid={`preview-post-date-${post.id}`}>
-                      {new Date(post.createdAt).toLocaleDateString("en-US", { 
-                        year: "numeric", 
-                        month: "short", 
-                        day: "numeric" 
-                      })}
-                    </span>
-                    <span>•</span>
-                    <span data-testid={`preview-post-readtime-${post.id}`}>
-                      {post.metadata?.readTime || 5} min read
+                  <div className="flex items-center space-x-6 text-sm text-secondary min-h-[20px]">
+                    <div className="flex items-center space-x-2">
+                      <span data-testid={`preview-post-date-${post.id}`}>
+                        {new Date(post.createdAt).toLocaleDateString("en-US", { 
+                          year: "numeric", 
+                          month: "short", 
+                          day: "numeric" 
+                        })}
+                      </span>
+                      <span>•</span>
+                      <span data-testid={`preview-post-readtime-${post.id}`}>
+                        {post.metadata?.readTime || 5} min read
+                      </span>
+                    </div>
+                    <span data-testid={`preview-post-views-${post.id}`} className="text-xs text-gray-500">
+                      {post.metadata?.views || 0} views
                     </span>
                   </div>
                   <Link href={`/blog/${post.slug}`}>
