@@ -100,7 +100,7 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
       </Link>
       
       <div className="p-6 space-y-4">
-        <div className="flex items-center justify-between text-sm text-secondary min-h-[20px]">
+        <div className="flex items-center space-x-6 text-sm text-secondary min-h-[20px]">
           <div className="flex items-center space-x-2">
             <span data-testid={`blog-date-${post.id}`}>
               {new Date(post.createdAt).toLocaleDateString("en-US", { 
