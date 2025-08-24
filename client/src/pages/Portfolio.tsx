@@ -439,8 +439,17 @@ export default function Portfolio() {
                 Insights on web development, technology trends, and lessons learned.
               </p>
             </div>
-            <Link href="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <Button variant="link" className="text-accent hover:text-blue-600 font-medium" data-testid="button-view-all-posts">
+            <Link href="/blog">
+              <Button 
+                variant="link" 
+                className="text-accent hover:text-blue-600 font-medium" 
+                data-testid="button-view-all-posts"
+                onClick={() => {
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }, 100);
+                }}
+              >
                 View All Posts →
               </Button>
             </Link>
