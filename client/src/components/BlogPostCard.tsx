@@ -130,7 +130,7 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
         </p>
         
         <div className="flex items-center justify-between pt-4">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center">
             <Avatar className="w-10 h-10">
               <img 
                 src={alexAuthorImage} 
@@ -142,9 +142,6 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
                 AS
               </AvatarFallback>
             </Avatar>
-            <span className="text-sm text-secondary" data-testid={`blog-author-${post.id}`}>
-              {post.metadata?.author || "Alex Shyaka"}
-            </span>
           </div>
           
           <div className="flex items-center space-x-2">
