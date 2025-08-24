@@ -131,12 +131,12 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
         
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center space-x-2">
-            <Avatar className="w-8 h-8">
+            <Avatar className="w-10 h-10">
               <img 
                 src={alexAuthorImage} 
                 alt="Alex Nkusi Shyaka - EdTech professional and CodeImpact founder, thoughtful pose with glasses in professional headshot"
-                className="w-full h-full object-cover object-center rounded-full"
-                style={{ objectPosition: 'center top' }}
+                className="w-full h-full object-cover rounded-full"
+                style={{ objectPosition: '50% 25%' }}
               />
               <AvatarFallback className="bg-accent/10 text-accent text-sm">
                 AS
