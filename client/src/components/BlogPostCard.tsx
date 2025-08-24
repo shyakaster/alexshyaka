@@ -135,7 +135,8 @@ export default function BlogPostCard({ post, onBookmark, showEditButton = false 
               <img 
                 src={alexAuthorImage} 
                 alt="Alex Nkusi Shyaka - EdTech professional and CodeImpact founder, thoughtful pose with glasses in professional headshot"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover object-center rounded-full"
+                style={{ objectPosition: 'center top' }}
               />
               <AvatarFallback className="bg-accent/10 text-accent text-sm">
                 AS
