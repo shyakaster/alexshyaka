@@ -174,7 +174,7 @@ export default function BlogPostPage() {
             </h1>
             
             <div className="flex flex-wrap items-center gap-6 text-sm text-secondary">
-              <div className="flex items-center">
+              <div className="flex items-center space-x-3">
                 <Avatar className="w-10 h-10">
                   <img 
                     src={alexAuthorImage} 
@@ -182,10 +182,13 @@ export default function BlogPostPage() {
                     className="w-full h-full object-cover rounded-full"
                     style={{ objectPosition: '50% 25%' }}
                   />
-                  <AvatarFallback className="bg-accent/10 text-accent font-semibold">
-                    AS
-                  </AvatarFallback>
                 </Avatar>
+                <div>
+                  <div className="font-medium text-primary" data-testid="post-author">
+                    {post.metadata?.author || "Alex Shyaka"}
+                  </div>
+                  <div className="text-sm text-secondary">EdTech Professional</div>
+                </div>
               </div>
               
               <div className="flex items-center space-x-4">
